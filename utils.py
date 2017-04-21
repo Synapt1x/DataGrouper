@@ -47,6 +47,21 @@ def determine_error_switches(df, task):
 
     return error_switch
 
+def assign_group(subject_row):
+    """ Define which group this subject belongs to """
+    # add an additional column for separating out groups
+    controls = {401, 402, 403, 404, 405, 418}
+    shams = {758, 762, 763, 764}
+    treat = {754, 756, 757, 759, 760, 761, 766, 767}
+    if subject_row['Subject'] in controls:
+        return 'control'
+    elif subject_row['Subject'] in shams:
+        return 'sham'
+    elif subject_row['Subject'] in treat:
+        return 'treatment'
+    else:
+        return 'NA'
+
 
 def main():
     pass

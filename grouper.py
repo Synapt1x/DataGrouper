@@ -23,12 +23,12 @@ utilities, but the current utilities available include:
 from os import chdir, path, sep
 
 import pandas as pd
-import numpy as np
 import utils
 from tkinter import Tk, filedialog, messagebox
 import glob, time
 
 def get_directory(root, initial_dir, title_dir):
+    """ Ask the user for the appropriate directory """
     num_errors = 0
     while True:
         if (num_errors > 0):
@@ -49,9 +49,13 @@ def get_directory(root, initial_dir, title_dir):
 
 
 def process_dataframe(df, task):
+    """ Process the data frame for additional calculated columns """
+
     # first remove practice sessions and group by subject and session
     df = df.loc[df['Condition'] != 'Practice']
     df = df.sort_values(['Subject', 'Session'])
+
+    df['Group'] = df.apply(utils.assign_group, axis=1)
 
     # Add additional features for analysis
     if task == 'ActionValue':
@@ -60,8 +64,22 @@ def process_dataframe(df, task):
 
     return df
 
+def format_output_excel(book, sheet):
+    """ Add proper formatting """
+
+    center_formatting = book.add_format({'align': 'center', 'align':
+        'vcenter'})
+
+    # format column widths
+    sheet.set_column('D:D', 4.1)
+    sheet.set_column('F:M', 2.5)
+    sheet.set_column('A:M', None, center_formatting)
+
+    return sheet
+
 
 def main():
+    """ Main function for grouping and compiling data into a single excel """
     # initialize variables
     output_file = pd.DataFrame({})
     trimmed_frames = []
@@ -82,7 +100,7 @@ def main():
     if (data_dirname == 'ActionValue'):
         cols = ['Subject', 'Session', 'WinningAction[Trial]', 'Proba',
                 'WinLose', 'XPosition', 'Condition', 'Accuracy', 'CountTrial',
-                'Score']
+                'Score[Trial]']
     else:
         cols = ['Subject', 'Session', 'WinningColor[Trial]', 'Proba',
                 'WinLose', 'ColorPicked', 'Card1.RESP', 'Condition',
@@ -97,7 +115,7 @@ def main():
     output_filename = output_dirname + sep + data_dirname + '-' + \
                       time.strftime(
         "%d-%m-%y") + '.xlsx'
-    excel_writer = pd.ExcelWriter(output_filename)
+    excel_writer = pd.ExcelWriter(output_filename, engine='xlsxwriter')
 
     # get a list of all data files in data directory chosen
     allFiles = glob.glob("*.xlsx")
@@ -119,10 +137,18 @@ def main():
         trim_datafile = datafile[cols]
         trimmed_frames.append(trim_datafile)
 
-    # concatenated dataframe
+    # concatenate the dataframes into one and process it
     output_file = pd.concat(trimmed_frames)
     output_file = process_dataframe(output_file, data_dirname)
+
+    # format and save the output excel file
     output_file.to_excel(excel_writer, sheet_name=data_dirname)
+
+    worksheet = excel_writer.sheets[data_dirname]
+    workbook = excel_writer.book
+    format_output_excel(workbook, worksheet)
+
+    excel_writer.save()
 
 
 if __name__=='__main__':
