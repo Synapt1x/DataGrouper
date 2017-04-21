@@ -18,27 +18,31 @@ switch by changing sides after choosing a winning option
 """
 
 
-
-def determine_choice_made(df, task):
+def determine_choice_made(df):
     '''Add a column for choices if the task is action value'''
-    if task == 'ActionValue':
-        x_mid = 320
+    x_mid = 320
 
-        choice_made = [1 if x_val < x_mid else 2 for x_val in df['XPosition']]
+    choice_made = [1 if x_val < x_mid else 2 for x_val in df['XPosition']]
 
     return choice_made
 
 
 def determine_error_switches(df, task):
     ''' Add a column showing whether erroneous reversals are made'''
-    choice_made = determine_choice_made(df, task)
+    if (task == 'ActionValue'):
+        choice_made = determine_choice_made(df)
+    else:
+        choice_made = list(df['ColorPicked'])
 
+    conditions = list(df['Condition'])
     wins = list(df['WinLose'])
     indices = list(df.index.values)
-    error_switch = [1 if ((wins[cur - 1] == 'win') and (choice_made[cur] !=
-                    choice_made[cur - 1]) and (not (indices[cur] == 6 and
-                    indices[cur - 1] > 6)) and (indices[cur] != 0)) else 0
-                    for cur in range(1, len(wins))]
+    error_switch = [1 if ((wins[cur - 1] == 'win')
+                        and (choice_made[cur] != choice_made[cur - 1])
+                        and (not (indices[cur] == 6 and indices[cur - 1] > 6))
+                        and (indices[cur] != 0)
+                        and (isinstance(conditions[cur - 1], str)))
+                        else 0 for cur in range(1, len(wins))]
     error_switch.insert(0, 0) # cannot be a switch at the very beginning
 
     return error_switch

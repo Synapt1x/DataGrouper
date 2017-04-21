@@ -31,16 +31,9 @@ import glob, time
 def get_directory(root, initial_dir, title_dir):
     num_errors = 0
     while True:
-        if (num_errors > 2):
-            result = messagebox.askyesno(title="Quit?", message="No "
-                                                                "directory \
-   selected over multipled attempts. Do you want to quit instead?")
-            if (result == True):
-                print("Exiting program...")
-                exit()
-            else:
-                num_errors = 0
-                break
+        if (num_errors > 0):
+            print("Exiting program...")
+            exit()
         try:
             get_dirname = filedialog.askdirectory(
                 parent=root, initialdir=initial_dir,
@@ -61,7 +54,8 @@ def process_dataframe(df, task):
     df = df.sort_values(['Subject', 'Session'])
 
     # Add additional features for analysis
-    df['Choice'] = utils.determine_choice_made(df, task)
+    if task == 'ActionValue':
+        df['Choice'] = utils.determine_choice_made(df)
     df['Error Switch'] = utils.determine_error_switches(df, task)
 
     return df
@@ -71,8 +65,6 @@ def main():
     # initialize variables
     output_file = pd.DataFrame({})
     trimmed_frames = []
-    cols = ['Subject', 'Session', 'WinningAction[Trial]', 'Proba',
-            'WinLose', 'XPosition', 'Condition', 'Accuracy', 'CountTrial']
 
     # locate the current directory and file location
     dirname = path.split(path.abspath("__file__"))
@@ -82,29 +74,35 @@ def main():
     root.withdraw()
 
     # Ask user to identify the data directory
-    # dataDirpath = get_directory(root, dirname, 'Please select the data
-    # directory.')
-    # temporary while testing
-    dataDirpath = path.dirname(
-        '/home/synapt1x/MandanaResearch/OCD-ReversalLearning/ReversalLearning'
-        '-ExcelFiles/ActionValue/')
-    dataDirname = dataDirpath.split(sep)[-1]
+    data_dirpath = get_directory(root, dirname, 'Please select the data '
+                                               'directory.')
+    data_dirname = data_dirpath.split(sep)[-1]
+
+    # Identify the columns for compilation based on which task was chosen
+    if (data_dirname == 'ActionValue'):
+        cols = ['Subject', 'Session', 'WinningAction[Trial]', 'Proba',
+                'WinLose', 'XPosition', 'Condition', 'Accuracy', 'CountTrial',
+                'Score']
+    else:
+        cols = ['Subject', 'Session', 'WinningColor[Trial]', 'Proba',
+                'WinLose', 'ColorPicked', 'Card1.RESP', 'Condition',
+                'Accuracy', 'CountTrial[Trial]', 'Score[Trial]']
 
     # change to data directory
-    chdir(dataDirpath)
+    chdir(data_dirpath)
 
     # Ask user to identify the output directory and create an excel writer
-    outputDirname = get_directory(root, dirname, 'Please select the '
+    output_dirname = get_directory(root, dirname, 'Please select the '
                                                      'output directory.')
-    outputFilename = outputDirname + sep + dataDirname + '-' + time.strftime(
+    output_filename = output_dirname + sep + data_dirname + '-' + \
+                      time.strftime(
         "%d-%m-%y") + '.xlsx'
-    excel_writer = pd.ExcelWriter(outputFilename)
-
+    excel_writer = pd.ExcelWriter(output_filename)
 
     # get a list of all data files in data directory chosen
     allFiles = glob.glob("*.xlsx")
     try:
-        numFiles = len(allFiles)
+        num_files = len(allFiles)
     except:
         messagebox.showinfo(
             "No excel spreadsheets found. Please restart the program.")
@@ -123,11 +121,8 @@ def main():
 
     # concatenated dataframe
     output_file = pd.concat(trimmed_frames)
-
-    output_file = process_dataframe(output_file, dataDirname)
-
-
-    output_file.to_excel(excel_writer, sheet_name=dataDirname)
+    output_file = process_dataframe(output_file, data_dirname)
+    output_file.to_excel(excel_writer, sheet_name=data_dirname)
 
 
 if __name__=='__main__':
