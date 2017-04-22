@@ -27,6 +27,7 @@ import utils
 from tkinter import Tk, filedialog, messagebox
 import glob, time
 
+
 def get_directory(root, initial_dir, title_dir):
     """ Ask the user for the appropriate directory """
     num_errors = 0
@@ -64,18 +65,23 @@ def process_dataframe(df, task):
 
     return df
 
-def format_output_excel(book, sheet):
-    """ Add proper formatting """
 
-    center_formatting = book.add_format({'align': 'center', 'align':
-        'vcenter'})
+def output_excel(excel_writer, task):
+    """ Add proper formatting and save excel to file """
+
+    # extract refs to workbook and sheet for the output excel
+    worksheet = excel_writer.sheets[task]
+    workbook = excel_writer.book
+
+    # create center formatting
+    center_formatting = workbook.add_format({'align': 'center'})
 
     # format column widths
-    sheet.set_column('D:D', 4.1)
-    sheet.set_column('F:M', 2.5)
-    sheet.set_column('A:M', None, center_formatting)
+    worksheet.set_column('D:D', 4.1, center_formatting)
+    worksheet.set_column('F:M', 2.5, center_formatting)
+    worksheet.set_column('A:M', None, center_formatting)
 
-    return sheet
+    excel_writer.save()
 
 
 def main():
@@ -103,15 +109,15 @@ def main():
                 'Score[Trial]']
     else:
         cols = ['Subject', 'Session', 'WinningColor[Trial]', 'Proba',
-                'WinLose', 'ColorPicked', 'Card1.RESP', 'Condition',
-                'Accuracy', 'CountTrial[Trial]', 'Score[Trial]']
+                'WinLose', 'ColorPicked', 'Condition', 'Accuracy',
+                'CountTrial[Trial]', 'Score[Trial]']
 
     # change to data directory
     chdir(data_dirpath)
 
     # Ask user to identify the output directory and create an excel writer
-    output_dirname = get_directory(root, dirname, 'Please select the '
-                                                     'output directory.')
+    output_dirname = get_directory(root, dirname, 'Please select the output '
+                                                  'directory.')
     output_filename = output_dirname + sep + data_dirname + '-' + \
                       time.strftime(
         "%d-%m-%y") + '.xlsx'
@@ -142,13 +148,8 @@ def main():
     output_file = process_dataframe(output_file, data_dirname)
 
     # format and save the output excel file
-    output_file.to_excel(excel_writer, sheet_name=data_dirname)
-
-    worksheet = excel_writer.sheets[data_dirname]
-    workbook = excel_writer.book
-    format_output_excel(workbook, worksheet)
-
-    excel_writer.save()
+    output_file.to_excel(excel_writer, index=False, sheet_name=data_dirname)
+    output_excel(excel_writer, data_dirname)
 
 
 if __name__=='__main__':
