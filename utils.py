@@ -17,6 +17,7 @@ switch by changing sides after choosing a winning option
 
 """
 import numpy as np
+import pandas as pd
 
 
 def determine_error_switches(df, task):
@@ -61,13 +62,23 @@ def determine_max_reversals(df, task):
     """ Add a column that denotes the maximum number of reversals for a 
     subject """
 
-    # extract condition information
+    # first assign the max rest count
     if task == 'ActionValue':
-        df['Reversal'] = list(df['Condition'].str.extract('(\d+)',
-                            expand=False).fillna(0).astype(int))
+        max_trials = 100
+    else:
+        max_trials = 70
+
+    # extract condition information
+    df['Reversal'] = list(df['Condition'].str.extract('(\d+)',
+                                          expand=False).fillna(0).astype(int))
+
+    # fix any erroneously added ?'s in RestCount column
+    df['RestCount'] = np.where(df['Condition'] == 'IL', max_trials,
+                                df['RestCount'])
 
     # remove additional reversals after task has been completed
-    df['Reversal'] = np.where(df['RestCount'] < 0, 0, df['Reversal'])
+    df['Reversal'] = np.where(df['RestCount'].fillna(0).astype(int) < 0, 0,
+                              df['Reversal'])
 
     # determine max number for each subject grouped by trial
     df['Max Reversals'] = df.groupby(['Subject', 'Session'])[

@@ -47,8 +47,9 @@ def process_dataframe(df, task):
     """ Process the data frame for additional calculated columns """
 
     # first remove practice sessions and group by subject and session
-    df = df.loc[df['Condition'] != 'Practice']
-    df = df.sort_values(['Subject', 'Session'])
+    df = df.loc[df['Condition'] != 'Practice'] # remove defined practice
+    df = df.loc[~df['Condition'].isnull()] # remove empty conditions, which is
+    # practice in Prob_RL
 
     df['Group'] = df.apply(utils.assign_group, axis=1)
 
@@ -57,6 +58,9 @@ def process_dataframe(df, task):
 
     # add a column for determining the max number of reversals for each subj
     utils.determine_max_reversals(df, task)
+
+    # finally sort by subject and then subsort by session
+    df = df.sort_values(['Subject', 'Session'])
 
     return df
 
@@ -105,7 +109,7 @@ def main():
     else:
         cols = ['Subject', 'Session', 'WinningColor[Trial]', 'Proba',
                 'WinLose', 'ColorPicked', 'Condition', 'Accuracy',
-                'RestCount', 'Reversal', 'Score[Trial]']
+                'RestCount', 'Score[Trial]']
 
     # change to data directory
     chdir(data_dirpath)
