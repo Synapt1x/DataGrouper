@@ -114,8 +114,8 @@ def main():
     chdir(data_dirpath)
 
     # Ask user to identify the output directory and create an excel writer
-    output_dirname = get_directory(root, dirname, 'Please select the output '
-                                                  'directory.')
+    output_dirname = get_directory(root, '..', 'Please select '
+                                    'the output directory.')
     output_filename = output_dirname + sep + data_dirname + '-' + \
                       time.strftime(
         "%d-%m-%y") + '.xlsx'

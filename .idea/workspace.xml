@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DataGrouper$grouper.coverage" NAME="grouper Coverage Results" MODIFIED="1493147502966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DataGrouper$grouper.coverage" NAME="grouper Coverage Results" MODIFIED="1493148180047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -21,13 +21,13 @@
       <file leaf-file-name="grouper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grouper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="55" column="65" lean-forward="true" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
+            <state relative-caret-position="306">
+              <caret line="110" column="44" lean-forward="true" selection-start-line="110" selection-start-column="44" selection-end-line="110" selection-end-column="44" />
               <folding>
                 <element signature="e#672#703#0" expanded="true" />
                 <element signature="e#858#1310#0" expanded="true" />
+                <element signature="e#1350#2037#0" expanded="true" />
                 <element signature="e#2082#2591#0" expanded="true" />
-                <element signature="e#2610#5159#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -376,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493146942806</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Corrected sort and investigated error; no error&#10;&#10;The output of number of reversals was in fact correct.&#10;This occurs when the participant does not proceed from IL.">
+      <created>1493147651945</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1493147651945</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -439,14 +446,15 @@
     <MESSAGE value="Added new output column and fixed choice made&#10;&#10;Choice made was actually unnecessary, so it was removed&#10;from utils. Some input columns were changed, and it&#10;was determined that in order to correctly get the max&#10;amount of reversals made, I needed to use 'RestCount'&#10;which denotes how many trials were left in the task. &#10;When this was 0, that denotes the highest number of&#10;reversals, since everything after is just the program&#10;running through remaining trials once each." />
     <MESSAGE value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils." />
     <MESSAGE value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils. Though there &#10;are some errors where max reversals is outputting as&#10;0." />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils. Though there &#10;are some errors where max reversals is outputting as&#10;0." />
+    <MESSAGE value="Corrected sort and investigated error; no error&#10;&#10;The output of number of reversals was in fact correct.&#10;This occurs when the participant does not proceed from IL." />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected sort and investigated error; no error&#10;&#10;The output of number of reversals was in fact correct.&#10;This occurs when the participant does not proceed from IL." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="29" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -462,8 +470,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
+            <element signature="e#1350#2037#0" expanded="true" />
             <element signature="e#2082#2591#0" expanded="true" />
-            <element signature="e#2610#5159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -489,8 +497,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
+            <element signature="e#1350#2037#0" expanded="true" />
             <element signature="e#2082#2591#0" expanded="true" />
-            <element signature="e#2610#5159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -516,8 +524,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
+            <element signature="e#1350#2037#0" expanded="true" />
             <element signature="e#2082#2591#0" expanded="true" />
-            <element signature="e#2610#5159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -543,8 +551,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
+            <element signature="e#1350#2037#0" expanded="true" />
             <element signature="e#2082#2591#0" expanded="true" />
-            <element signature="e#2610#5159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -605,8 +613,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
+            <element signature="e#1350#2037#0" expanded="true" />
             <element signature="e#2082#2591#0" expanded="true" />
-            <element signature="e#2610#5159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -618,8 +626,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
+            <element signature="e#1350#2037#0" expanded="true" />
             <element signature="e#2082#2591#0" expanded="true" />
-            <element signature="e#2610#5159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -631,8 +639,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
+            <element signature="e#1350#2037#0" expanded="true" />
             <element signature="e#2082#2591#0" expanded="true" />
-            <element signature="e#2610#5159#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -703,13 +711,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grouper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="55" column="65" lean-forward="true" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
+        <state relative-caret-position="306">
+          <caret line="110" column="44" lean-forward="true" selection-start-line="110" selection-start-column="44" selection-end-line="110" selection-end-column="44" />
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
+            <element signature="e#1350#2037#0" expanded="true" />
             <element signature="e#2082#2591#0" expanded="true" />
-            <element signature="e#2610#5159#0" expanded="true" />
           </folding>
         </state>
       </provider>
