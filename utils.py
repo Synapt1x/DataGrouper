@@ -81,7 +81,7 @@ def determine_max_reversals(df, task):
                               df['Reversal'])
 
     # determine max number for each subject grouped by trial
-    df['Max Reversals'] = df.groupby(['Subject', 'Session'])[
+    df['Num Reversals'] = df.groupby(['Subject', 'Session'])[
         'Reversal'].transform('max')
 
 

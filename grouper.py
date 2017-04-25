@@ -63,12 +63,12 @@ def process_dataframe(df, task):
     df = df.sort_values(['Subject', 'Session'])
 
     ''' reversals data '''
-    reversals_df = df[['Subject', 'Session', 'Group', 'Max Reversals']].copy()
+    reversals_df = df[['Subject', 'Session', 'Group', 'Num Reversals']].copy()
 
     # collapse over subject and session
     reversals_df.drop_duplicates(inplace=True)
 
-    reversals_df = reversals_df.groupby('Group')['Max Reversals'].mean(
+    reversals_df = reversals_df.groupby('Group')['Num Reversals'].mean(
                                                                 ).reset_index()
 
     return df, reversals_df
