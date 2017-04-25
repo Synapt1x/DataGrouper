@@ -4,7 +4,6 @@
     <list default="true" id="009c9dd4-f5ad-45c8-b38c-6f310411950d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grouper.py" afterPath="$PROJECT_DIR$/grouper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DataGrouper$grouper.coverage" NAME="grouper Coverage Results" MODIFIED="1493150133133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DataGrouper$grouper.coverage" NAME="grouper Coverage Results" MODIFIED="1493151521820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -22,12 +21,13 @@
       <file leaf-file-name="grouper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grouper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="e#672#703#0" expanded="true" />
                 <element signature="e#858#1310#0" expanded="true" />
-                <element signature="e#2439#5038#0" expanded="true" />
+                <element signature="e#1350#2328#0" expanded="true" />
+                <element signature="e#2347#4946#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,13 +53,14 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="83" column="11" lean-forward="false" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
+            <state relative-caret-position="346">
+              <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
                 <element signature="e#0#653#1" expanded="true" />
                 <element signature="e#654#672#0" expanded="true" />
                 <element signature="e#739#1523#0" expanded="true" />
                 <element signature="e#1560#2041#0" expanded="true" />
+                <element signature="e#2086#2999#0" expanded="true" />
                 <element signature="e#3018#3022#0" expanded="true" />
               </folding>
             </state>
@@ -94,8 +95,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/grouper.py" />
         <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/grouper.py" />
       </list>
     </option>
   </component>
@@ -400,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493150306949</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Change max reversals -&gt; num reversals">
+      <created>1493150403780</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1493150403780</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -445,7 +453,8 @@
     <MESSAGE value="Corrected sort and investigated error; no error&#10;&#10;The output of number of reversals was in fact correct.&#10;This occurs when the participant does not proceed from IL." />
     <MESSAGE value="Quicker initial dir for selecting output dir" />
     <MESSAGE value="Add possibility for additional sheets&#10;&#10;Added a new sheet that calculates the average amount of reversals&#10;on a per-session basis for each group. Can introduce other&#10;sheets for calculating other parameters necessary in data analysis." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add possibility for additional sheets&#10;&#10;Added a new sheet that calculates the average amount of reversals&#10;on a per-session basis for each group. Can introduce other&#10;sheets for calculating other parameters necessary in data analysis." />
+    <MESSAGE value="Change max reversals -&gt; num reversals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change max reversals -&gt; num reversals" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -468,7 +477,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#2439#5038#0" expanded="true" />
+            <element signature="e#1350#2328#0" expanded="true" />
+            <element signature="e#2347#4946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -482,6 +492,7 @@
             <element signature="e#654#672#0" expanded="true" />
             <element signature="e#739#1523#0" expanded="true" />
             <element signature="e#1560#2041#0" expanded="true" />
+            <element signature="e#2086#2999#0" expanded="true" />
             <element signature="e#3018#3022#0" expanded="true" />
           </folding>
         </state>
@@ -494,7 +505,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#2439#5038#0" expanded="true" />
+            <element signature="e#1350#2328#0" expanded="true" />
+            <element signature="e#2347#4946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -508,6 +520,7 @@
             <element signature="e#654#672#0" expanded="true" />
             <element signature="e#739#1523#0" expanded="true" />
             <element signature="e#1560#2041#0" expanded="true" />
+            <element signature="e#2086#2999#0" expanded="true" />
             <element signature="e#3018#3022#0" expanded="true" />
           </folding>
         </state>
@@ -520,7 +533,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#2439#5038#0" expanded="true" />
+            <element signature="e#1350#2328#0" expanded="true" />
+            <element signature="e#2347#4946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -534,6 +548,7 @@
             <element signature="e#654#672#0" expanded="true" />
             <element signature="e#739#1523#0" expanded="true" />
             <element signature="e#1560#2041#0" expanded="true" />
+            <element signature="e#2086#2999#0" expanded="true" />
             <element signature="e#3018#3022#0" expanded="true" />
           </folding>
         </state>
@@ -546,7 +561,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#2439#5038#0" expanded="true" />
+            <element signature="e#1350#2328#0" expanded="true" />
+            <element signature="e#2347#4946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -595,6 +611,7 @@
             <element signature="e#654#672#0" expanded="true" />
             <element signature="e#739#1523#0" expanded="true" />
             <element signature="e#1560#2041#0" expanded="true" />
+            <element signature="e#2086#2999#0" expanded="true" />
             <element signature="e#3018#3022#0" expanded="true" />
           </folding>
         </state>
@@ -607,7 +624,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#2439#5038#0" expanded="true" />
+            <element signature="e#1350#2328#0" expanded="true" />
+            <element signature="e#2347#4946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,7 +637,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#2439#5038#0" expanded="true" />
+            <element signature="e#1350#2328#0" expanded="true" />
+            <element signature="e#2347#4946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -631,7 +650,8 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#2439#5038#0" expanded="true" />
+            <element signature="e#1350#2328#0" expanded="true" />
+            <element signature="e#2347#4946#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,13 +708,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="83" column="11" lean-forward="false" selection-start-line="83" selection-start-column="11" selection-end-line="83" selection-end-column="11" />
+        <state relative-caret-position="346">
+          <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
             <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
             <element signature="e#739#1523#0" expanded="true" />
             <element signature="e#1560#2041#0" expanded="true" />
+            <element signature="e#2086#2999#0" expanded="true" />
             <element signature="e#3018#3022#0" expanded="true" />
           </folding>
         </state>
@@ -702,12 +723,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grouper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#2439#5038#0" expanded="true" />
+            <element signature="e#1350#2328#0" expanded="true" />
+            <element signature="e#2347#4946#0" expanded="true" />
           </folding>
         </state>
       </provider>

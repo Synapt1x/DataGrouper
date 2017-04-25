@@ -60,16 +60,14 @@ def process_dataframe(df, task):
     utils.determine_max_reversals(df, task)
 
     # finally sort by subject and then subsort by session
-    df = df.sort_values(['Subject', 'Session'])
+    df.sort_values(['Subject', 'Session'], inplace=True)
 
     ''' reversals data '''
     reversals_df = df[['Subject', 'Session', 'Group', 'Num Reversals']].copy()
 
     # collapse over subject and session
     reversals_df.drop_duplicates(inplace=True)
-
-    reversals_df = reversals_df.groupby('Group')['Num Reversals'].mean(
-                                                                ).reset_index()
+    reversals_df.sort_values('Group', inplace=True)
 
     return df, reversals_df
 
