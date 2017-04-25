@@ -60,7 +60,7 @@ def process_dataframe(df, task):
     utils.determine_max_reversals(df, task)
 
     # finally sort by subject and then subsort by session
-    df = df.sort_values(['Subject', 'Session'])
+    #df = df.sort_values(['Subject', 'Session'])
 
     return df
 
