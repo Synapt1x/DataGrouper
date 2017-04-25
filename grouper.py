@@ -30,23 +30,17 @@ import glob, time
 
 def get_directory(root, initial_dir, title_dir):
     """ Ask the user for the appropriate directory """
-    num_errors = 0
-    while True:
-        if (num_errors > 0):
-            print("Exiting program...")
-            exit()
-        try:
-            get_dirname = filedialog.askdirectory(
-                parent=root, initialdir=initial_dir,
-                title=title_dir)
-            if not get_dirname:
-                raise ValueError("empty string")
-            break
-        except ValueError:
-            num_errors += 1
-            messagebox.showinfo("Invalid directory - Failed \
-    attempt %0.0f/5" % num_errors, "Please select a valid directory...")
-    return get_dirname
+    try:
+        get_dirname = filedialog.askdirectory(
+            parent=root, initialdir=initial_dir,
+            title=title_dir)
+        if not get_dirname:
+            raise ValueError("empty string")
+        return get_dirname
+    except ValueError:
+        messagebox.showinfo("Invalid directory - Failed", "Operation "
+                                  "has been cancelled...")
+        exit()
 
 
 def process_dataframe(df, task):
@@ -58,10 +52,11 @@ def process_dataframe(df, task):
 
     df['Group'] = df.apply(utils.assign_group, axis=1)
 
-    # Add additional features for analysis
-    if task == 'ActionValue':
-        df['Choice'] = utils.determine_choice_made(df)
+    # add additional features for analysis
     df['Error Switch'] = utils.determine_error_switches(df, task)
+
+    # add a column for determining the max number of reversals for each subj
+    utils.determine_max_reversals(df, task)
 
     return df
 
@@ -105,12 +100,12 @@ def main():
     # Identify the columns for compilation based on which task was chosen
     if (data_dirname == 'ActionValue'):
         cols = ['Subject', 'Session', 'WinningAction[Trial]', 'Proba',
-                'WinLose', 'XPosition', 'Condition', 'Accuracy', 'CountTrial',
-                'Score[Trial]']
+                'WinLose', 'ActionMade', 'Condition', 'Accuracy',
+                'RestCount', 'Score[Trial]']
     else:
         cols = ['Subject', 'Session', 'WinningColor[Trial]', 'Proba',
                 'WinLose', 'ColorPicked', 'Condition', 'Accuracy',
-                'CountTrial[Trial]', 'Score[Trial]']
+                'RestCount', 'Reversal', 'Score[Trial]']
 
     # change to data directory
     chdir(data_dirpath)

@@ -16,21 +16,14 @@ determine_error_switches: determine whether the patient made an erroneous
 switch by changing sides after choosing a winning option
 
 """
-
-
-def determine_choice_made(df):
-    '''Add a column for choices if the task is action value'''
-    x_mid = 320
-
-    choice_made = [1 if x_val < x_mid else 2 for x_val in df['XPosition']]
-
-    return choice_made
+import numpy as np
 
 
 def determine_error_switches(df, task):
-    ''' Add a column showing whether erroneous reversals are made'''
+    """ Add a column showing whether erroneous reversals are made """
+
     if (task == 'ActionValue'):
-        choice_made = determine_choice_made(df)
+        choice_made = list(df['ActionMade'])
     else:
         choice_made = list(df['ColorPicked'])
 
@@ -49,10 +42,12 @@ def determine_error_switches(df, task):
 
 def assign_group(subject_row):
     """ Define which group this subject belongs to """
-    # add an additional column for separating out groups
+
     controls = {401, 402, 403, 404, 405, 418}
     shams = {758, 762, 763, 764}
     treat = {754, 756, 757, 759, 760, 761, 766, 767}
+
+    # check for set membership to determine where subject belongs
     if subject_row['Subject'] in controls:
         return 'control'
     elif subject_row['Subject'] in shams:
@@ -61,6 +56,22 @@ def assign_group(subject_row):
         return 'treatment'
     else:
         return 'NA'
+
+def determine_max_reversals(df, task):
+    """ Add a column that denotes the maximum number of reversals for a 
+    subject """
+
+    # extract condition information
+    if task == 'ActionValue':
+        df['Reversal'] = list(df['Condition'].str.extract('(\d+)',
+                            expand=False).fillna(0).astype(int))
+
+    # remove additional reversals after task has been completed
+    df['Reversal'] = np.where(df['RestCount'] < 0, 0, df['Reversal'])
+
+    # determine max number for each subject grouped by trial
+    df['Max Reversals'] = df.groupby(['Subject', 'Session'])[
+        'Reversal'].transform('max')
 
 
 def main():
