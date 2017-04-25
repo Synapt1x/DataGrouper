@@ -48,8 +48,7 @@ def process_dataframe(df, task):
 
     # first remove practice sessions and group by subject and session
     df = df.loc[df['Condition'] != 'Practice'] # remove defined practice
-    df = df.loc[~df['Condition'].isnull()] # remove empty conditions, which is
-    # practice in Prob_RL
+    df = df.loc[~df['Condition'].isnull()] # remove empty conditions
 
     df['Group'] = df.apply(utils.assign_group, axis=1)
 
@@ -60,7 +59,7 @@ def process_dataframe(df, task):
     utils.determine_max_reversals(df, task)
 
     # finally sort by subject and then subsort by session
-    #df = df.sort_values(['Subject', 'Session'])
+    df = df.sort_values(['Subject', 'Session'])
 
     return df
 
