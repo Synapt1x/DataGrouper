@@ -46,6 +46,7 @@ def get_directory(root, initial_dir, title_dir):
 def process_dataframe(df, task):
     """ Process the data frame for additional calculated columns """
 
+    ''' all data '''
     # first remove practice sessions and group by subject and session
     df = df.loc[df['Condition'] != 'Practice'] # remove defined practice
     df = df.loc[~df['Condition'].isnull()] # remove empty conditions
@@ -61,25 +62,16 @@ def process_dataframe(df, task):
     # finally sort by subject and then subsort by session
     df = df.sort_values(['Subject', 'Session'])
 
-    return df
+    ''' reversals data '''
+    reversals_df = df[['Subject', 'Session', 'Group', 'Max Reversals']].copy()
 
+    # collapse over subject and session
+    reversals_df.drop_duplicates(inplace=True)
 
-def output_excel(excel_writer, task):
-    """ Add proper formatting and save excel to file """
+    reversals_df = reversals_df.groupby('Group')['Max Reversals'].mean(
+                                                                ).reset_index()
 
-    # extract refs to workbook and sheet for the output excel
-    worksheet = excel_writer.sheets[task]
-    workbook = excel_writer.book
-
-    # create center formatting
-    center_formatting = workbook.add_format({'align': 'center'})
-
-    # format column widths
-    worksheet.set_column('D:D', 4.1, center_formatting)
-    worksheet.set_column('F:M', 2.5, center_formatting)
-    worksheet.set_column('A:M', None, center_formatting)
-
-    excel_writer.save()
+    return df, reversals_df
 
 
 def main():
@@ -142,12 +134,14 @@ def main():
         trimmed_frames.append(trim_datafile)
 
     # concatenate the dataframes into one and process it
-    output_file = pd.concat(trimmed_frames)
-    output_file = process_dataframe(output_file, data_dirname)
+    output_df = pd.concat(trimmed_frames)
+    [all_data_df, reversals_df] = process_dataframe(output_df, data_dirname)
 
     # format and save the output excel file
-    output_file.to_excel(excel_writer, index=False, sheet_name=data_dirname)
-    output_excel(excel_writer, data_dirname)
+    all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')
+    reversals_df.to_excel(excel_writer, index=False, sheet_name='Reversals')
+
+    excel_writer.save()
 
 
 if __name__=='__main__':

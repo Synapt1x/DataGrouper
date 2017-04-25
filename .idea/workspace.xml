@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DataGrouper$grouper.coverage" NAME="grouper Coverage Results" MODIFIED="1493148180047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DataGrouper$grouper.coverage" NAME="grouper Coverage Results" MODIFIED="1493150133133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -21,13 +21,12 @@
       <file leaf-file-name="grouper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grouper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="110" column="44" lean-forward="true" selection-start-line="110" selection-start-column="44" selection-end-line="110" selection-end-column="44" />
+            <state relative-caret-position="130">
+              <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
               <folding>
                 <element signature="e#672#703#0" expanded="true" />
                 <element signature="e#858#1310#0" expanded="true" />
-                <element signature="e#1350#2037#0" expanded="true" />
-                <element signature="e#2082#2591#0" expanded="true" />
+                <element signature="e#2439#5038#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,8 +52,8 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+            <state relative-caret-position="126">
+              <caret line="72" column="32" lean-forward="true" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
               <folding>
                 <element signature="e#0#653#1" expanded="true" />
                 <element signature="e#654#672#0" expanded="true" />
@@ -83,6 +82,7 @@
       <find>process</find>
       <find>dataDirname</find>
       <find>choice_made</find>
+      <find>groupby</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -383,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493147651945</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Quicker initial dir for selecting output dir">
+      <created>1493148265318</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1493148265318</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -410,27 +417,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.296" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17226666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39959225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -447,14 +433,15 @@
     <MESSAGE value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils." />
     <MESSAGE value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils. Though there &#10;are some errors where max reversals is outputting as&#10;0." />
     <MESSAGE value="Corrected sort and investigated error; no error&#10;&#10;The output of number of reversals was in fact correct.&#10;This occurs when the participant does not proceed from IL." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected sort and investigated error; no error&#10;&#10;The output of number of reversals was in fact correct.&#10;This occurs when the participant does not proceed from IL." />
+    <MESSAGE value="Quicker initial dir for selecting output dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quicker initial dir for selecting output dir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="30" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -470,8 +457,7 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#1350#2037#0" expanded="true" />
-            <element signature="e#2082#2591#0" expanded="true" />
+            <element signature="e#2439#5038#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -497,8 +483,7 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#1350#2037#0" expanded="true" />
-            <element signature="e#2082#2591#0" expanded="true" />
+            <element signature="e#2439#5038#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -524,8 +509,7 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#1350#2037#0" expanded="true" />
-            <element signature="e#2082#2591#0" expanded="true" />
+            <element signature="e#2439#5038#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -551,8 +535,7 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#1350#2037#0" expanded="true" />
-            <element signature="e#2082#2591#0" expanded="true" />
+            <element signature="e#2439#5038#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -613,8 +596,7 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#1350#2037#0" expanded="true" />
-            <element signature="e#2082#2591#0" expanded="true" />
+            <element signature="e#2439#5038#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -626,8 +608,7 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#1350#2037#0" expanded="true" />
-            <element signature="e#2082#2591#0" expanded="true" />
+            <element signature="e#2439#5038#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -639,8 +620,7 @@
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#1350#2037#0" expanded="true" />
-            <element signature="e#2082#2591#0" expanded="true" />
+            <element signature="e#2439#5038#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -697,8 +677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
+        <state relative-caret-position="126">
+          <caret line="72" column="32" lean-forward="true" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
           <folding>
             <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
@@ -711,13 +691,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grouper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="110" column="44" lean-forward="true" selection-start-line="110" selection-start-column="44" selection-end-line="110" selection-end-column="44" />
+        <state relative-caret-position="130">
+          <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
           <folding>
             <element signature="e#672#703#0" expanded="true" />
             <element signature="e#858#1310#0" expanded="true" />
-            <element signature="e#1350#2037#0" expanded="true" />
-            <element signature="e#2082#2591#0" expanded="true" />
+            <element signature="e#2439#5038#0" expanded="true" />
           </folding>
         </state>
       </provider>
