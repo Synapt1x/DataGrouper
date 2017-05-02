@@ -17,7 +17,6 @@ switch by changing sides after choosing a winning option
 
 """
 import numpy as np
-import pandas as pd
 
 
 def determine_error_switches(df, task):
@@ -58,12 +57,12 @@ def assign_group(subject_row):
     else:
         return 'NA'
 
-def determine_max_reversals(df, task):
+def determine_max_reversals(df, project):
     """ Add a column that denotes the maximum number of reversals for a 
     subject """
 
     # first assign the max rest count
-    if task == 'ActionValue':
+    if project == 'ActionValue':
         max_trials = 100
     else:
         max_trials = 70
@@ -83,6 +82,33 @@ def determine_max_reversals(df, task):
     # determine max number for each subject grouped by trial
     df['Num Reversals'] = df.groupby(['Subject', 'Session'])[
         'Reversal'].transform('max')
+
+
+def determine_confidence(df):
+    """ Determine the true confidence value based on whether or not the 
+    subject actually answered or not """
+
+    # firstly rename textdisplay columns with proper confidence labels
+    df.rename(columns={'TextDisplay35.RESP': 'Recall Confidence',
+                       'TextDisplay36.RESP': 'Recog Confidence'}, inplace=True)
+
+    df['Recall Choice'] = df['Recall Choice'].astype(str)
+
+    # set any confidence levels to 0 if they did not actually answer
+    correct_confidence = np.where(df['Recall Choice'] != 'nan', df['Recall '
+                                                           'Confidence'], 0)
+
+    return correct_confidence
+
+def determine_face_accuracy(df):
+    """ Determine whether the subject was correct or not in either recalling 
+    or recognizing the face """
+
+    # check if recall matches any the correct answer column
+    recall_acc = np.where(df['Recall Choice'] == df['CorrectAnswer'], 1, 0)
+    recog_acc = np.where(df['Recog Choice'] == df['CorrectAnswer'], 1, 0)
+
+    return recall_acc, recog_acc
 
 
 def main():

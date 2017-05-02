@@ -20,6 +20,7 @@ utilities, but the current utilities available include:
 == mean
 
 """
+import sys
 from os import chdir, path, sep
 
 import pandas as pd
@@ -43,39 +44,145 @@ def get_directory(root, initial_dir, title_dir):
         exit()
 
 
-def process_dataframe(df, task):
+def process_file(file_name, cols, get_block = False):
+    """ Parse an excel file and return a dataframe trimmed based on which 
+    columns are required for the given task """
+
+    # setup the excel file
+    excel = pd.ExcelFile(file_name)
+
+    # now read excel file data into a DataFrame
+    datafile = pd.read_excel(excel)
+
+    # split name in the case of the face learning task
+    if get_block:
+        text_split = file_name.split(sep='-')
+        block_num = text_split[2].split(sep='_')[0][-1]
+
+        # add column for block num
+        datafile['Block'] = block_num
+        datafile['Block'] = datafile['Block'].astype(int)
+
+    return datafile[cols]
+
+
+def determine_task(root, dirname):
+    """ Determine which task will be amalgamated by grouper.py """
+    # initialize
+    data_dirpath = ''
+    cols = []
+    sort_cols = []
+
+    if len(sys.argv) > 1:
+        task = str(sys.argv[1])
+    else:
+        # Ask user to identify the data directory
+        data_dirpath = get_directory(root, dirname, 'Please select the data '
+                                                    'directory.')
+        task = data_dirpath.split(sep)[-1]
+
+    # identify the columns required for each task
+    if task == 'ActionValue':
+        if not data_dirpath:
+            data_dirpath = \
+                '/home/synapt1x/MandanaResearch/OCD-ReversalLearning' \
+                '/ReversalLearning-ExcelFiles/ActionValue'
+        get_block = False
+
+        cols = ['Subject', 'Session', 'WinningAction[Trial]', 'Proba',
+                'WinLose', 'ActionMade', 'Condition', 'Accuracy',
+                'RestCount', 'Score[Trial]']
+
+        sort_cols = ['Subject', 'Session']
+
+    elif task == 'Prob_RL':
+        if not data_dirpath:
+            data_dirpath = \
+                '/home/synapt1x/MandanaResearch/OCD-ReversalLearning' \
+                '/ReversalLearning-ExcelFiles/Prob_RL'
+        get_block = False
+
+        cols = ['Subject', 'Session', 'WinningColor[Trial]', 'Proba',
+                'WinLose', 'ColorPicked', 'Condition', 'Accuracy',
+                'RestCount', 'Score[Trial]']
+
+        sort_cols = ['Subject', 'Session']
+
+    elif task == 'FaceLearning-Learning':
+        if not data_dirpath:
+            data_dirpath = '/home/synapt1x/MandanaResearch/OCD-FaceLearning' \
+                       '/FaceLearning-Learning'
+        get_block = True
+
+        cols = ['Subject', 'Block', 'Trial', 'TextDisplay6.RESP']
+
+        sort_cols = ['Subject', 'Block', 'Trial']
+
+    elif task == 'FaceLearning-Recall':
+        if not data_dirpath:
+            data_dirpath = '/home/synapt1x/MandanaResearch/OCD-FaceLearning' \
+                       '/FaceLearning-Recall'
+        get_block = True
+
+        cols = ['Subject', 'Block', 'Trial', 'CorrectAnswer',
+                'TextDisplay35.RESP', 'TextDisplay36.RESP']
+
+        sort_cols = ['Subject', 'Block', 'Trial']
+
+    # print which columns will be pulled into the output excel
+    print("Current columns to be captured from the excel files:\n")
+    for col in cols: print(col)
+
+    return data_dirpath, cols, sort_cols, task, get_block
+
+
+def process_dataframe(df, task, sort_cols):
     """ Process the data frame for additional calculated columns """
 
-    ''' all data '''
-    # first remove practice sessions and group by subject and session
-    df = df.loc[df['Condition'] != 'Practice'] # remove defined practice
-    df = df.loc[~df['Condition'].isnull()] # remove empty conditions
+    # sort by the required identifying variables
+    df.sort_values(sort_cols, inplace=True)
 
+    # assign groups based on subject number
     df['Group'] = df.apply(utils.assign_group, axis=1)
 
-    # add additional features for analysis
-    df['Error Switch'] = utils.determine_error_switches(df, task)
+    if task == 'ActionValue' or task == 'Prob_RL':
+        ''' all data for reversal task '''
+        # first remove practice sessions and group by subject and session
+        df = df.loc[df['Condition'] != 'Practice'] # remove defined practice
+        df = df.loc[~df['Condition'].isnull()] # remove empty conditions
 
-    # add a column for determining the max number of reversals for each subj
-    utils.determine_max_reversals(df, task)
+        # add additional features for analysis
+        df['Error Switch'] = utils.determine_error_switches(df, task)
 
-    # finally sort by subject and then subsort by session
-    df.sort_values(['Subject', 'Session'], inplace=True)
+        # add a col for determining the number of reversals for each subject
+        utils.determine_max_reversals(df, task)
 
-    ''' reversals data '''
-    reversals_df = df[['Subject', 'Session', 'Group', 'Num Reversals']].copy()
+        ''' reversals sheet '''
+        reversals_df = df[['Subject', 'Session', 'Group',
+                           'Num Reversals']].copy()
 
-    # collapse over subject and session
-    reversals_df.drop_duplicates(inplace=True)
-    reversals_df.sort_values('Group', inplace=True)
+        # collapse over subject and session
+        reversals_df.drop_duplicates(inplace=True)
+        reversals_df.sort_values('Group', inplace=True)
 
-    return df, reversals_df
+        return df, reversals_df
+
+    elif task == 'FaceLearning-Recall':
+        ''' process all data for face learning task '''
+
+        # firstly determine true confidence values for recall
+        df['Recall Confidence'] = utils.determine_confidence(df)
+
+        # determine whether the subject had correctly recalled or recognized
+        #  the face
+        df['Recall Acc'], df['Recog Acc'] = utils.determine_face_accuracy(df)
+
+        return df, pd.DataFrame({})
 
 
 def main():
     """ Main function for grouping and compiling data into a single excel """
     # initialize variables
-    output_file = pd.DataFrame({})
     trimmed_frames = []
 
     # locate the current directory and file location
@@ -85,20 +192,8 @@ def main():
     root = Tk()
     root.withdraw()
 
-    # Ask user to identify the data directory
-    data_dirpath = get_directory(root, dirname, 'Please select the data '
-                                               'directory.')
-    data_dirname = data_dirpath.split(sep)[-1]
-
-    # Identify the columns for compilation based on which task was chosen
-    if (data_dirname == 'ActionValue'):
-        cols = ['Subject', 'Session', 'WinningAction[Trial]', 'Proba',
-                'WinLose', 'ActionMade', 'Condition', 'Accuracy',
-                'RestCount', 'Score[Trial]']
-    else:
-        cols = ['Subject', 'Session', 'WinningColor[Trial]', 'Proba',
-                'WinLose', 'ColorPicked', 'Condition', 'Accuracy',
-                'RestCount', 'Score[Trial]']
+    [data_dirpath, cols, sort_cols, task, get_block] = determine_task(root,
+                                                                  dirname)
 
     # change to data directory
     chdir(data_dirpath)
@@ -106,7 +201,7 @@ def main():
     # Ask user to identify the output directory and create an excel writer
     output_dirname = get_directory(root, '..', 'Please select '
                                     'the output directory.')
-    output_filename = output_dirname + sep + data_dirname + '-' + \
+    output_filename = output_dirname + sep + task + '-' + \
                       time.strftime(
         "%d-%m-%y") + '.xlsx'
     excel_writer = pd.ExcelWriter(output_filename, engine='xlsxwriter')
@@ -120,25 +215,34 @@ def main():
             "No excel spreadsheets found. Please restart the program.")
 
     # parse over all data files
-    for file in allFiles:
-        excel = pd.ExcelFile(file)
-
-        # now read excel file data into a DataFrame
-        datafile = pd.read_excel(excel, converters={'WinLose':str,
-                                                    'Condition':str})
-
+    for file_name in allFiles:
         # store the dataframe after only selecting necessary columns
-        trim_datafile = datafile[cols]
-        trimmed_frames.append(trim_datafile)
+        trimmed_frames.append(process_file(file_name, cols, get_block))
 
     # concatenate the dataframes into one and process it
     output_df = pd.concat(trimmed_frames)
-    [all_data_df, reversals_df] = process_dataframe(output_df, data_dirname)
+
+    # recall in face learning task also requires names from the typed excel
+    if task == 'FaceLearning-Recall':
+        temp_path = '/home/synapt1x/MandanaResearch/OCD-FaceLearning' \
+                    '/RecallResponses/'
+        chdir(temp_path)
+
+        recall_cols = ['Subject', 'Block', 'Trial', 'Recall Choice', 'Recog '
+                        'Choice']
+        file_name = glob.glob("*.xlsx")[0]
+        recall_df = process_file(file_name, recall_cols, False)
+        output_df = pd.merge(output_df, recall_df)
+
+    # process the overall dataframe
+    [all_data_df, reversals_df] = process_dataframe(output_df, task,
+                                                    sort_cols)
 
     # format and save the output excel file
     all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')
-    reversals_df.to_excel(excel_writer, index=False, sheet_name='Reversals')
-
+    if task == 'ActionValue' or task == 'Prob_RL':
+        reversals_df.to_excel(excel_writer, index=False,
+                              sheet_name='Reversals')
     excel_writer.save()
 
 
