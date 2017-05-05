@@ -139,6 +139,9 @@ def determine_task(root, dirname):
 def process_dataframe(df, task, sort_cols):
     """ Process the data frame for additional calculated columns """
 
+    reversals_df = pd.DataFrame({}) # initialize and leave empty if not
+    # reversal task
+
     # sort by the required identifying variables
     df.sort_values(sort_cols, inplace=True)
 
@@ -165,8 +168,6 @@ def process_dataframe(df, task, sort_cols):
         reversals_df.drop_duplicates(inplace=True)
         reversals_df.sort_values('Group', inplace=True)
 
-        return df, reversals_df
-
     elif task == 'FaceLearning-Recall':
         ''' process all data for face learning task '''
 
@@ -177,7 +178,14 @@ def process_dataframe(df, task, sort_cols):
         #  the face
         df['Recall Acc'], df['Recog Acc'] = utils.determine_face_accuracy(df)
 
-        return df, pd.DataFrame({})
+    elif task == 'FaceLearning-Learning':
+        ''' process all data for face learning acquisition task '''
+
+        # firstly rename the columns as appropriate
+        df.rename(columns={'TextDisplay6.RESP': 'Confidence'},
+                  inplace=True)
+
+    return df, reversals_df
 
 
 def main():
@@ -248,5 +256,3 @@ def main():
 
 if __name__=='__main__':
     main()
-
-

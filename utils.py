@@ -44,7 +44,7 @@ def assign_group(subject_row):
     """ Define which group this subject belongs to """
 
     controls = {401, 402, 403, 404, 405, 418}
-    shams = {758, 762, 763, 764}
+    shams = {758, 762, 763, 764, 768}
     treat = {754, 756, 757, 759, 760, 761, 766, 767}
 
     # check for set membership to determine where subject belongs
