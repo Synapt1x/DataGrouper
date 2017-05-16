@@ -27,6 +27,7 @@ import pandas as pd
 import utils
 from tkinter import Tk, filedialog, messagebox
 import glob, time
+import platform
 
 
 def get_directory(root, initial_dir, title_dir):
@@ -66,12 +67,13 @@ def process_file(file_name, cols, get_block = False):
     return datafile[cols]
 
 
-def determine_task(root, dirname):
+def determine_task(root, dirname, prefix):
     """ Determine which task will be amalgamated by grouper.py """
     # initialize
     data_dirpath = ''
     cols = []
     sort_cols = []
+
 
     if len(sys.argv) > 1:
         task = str(sys.argv[1])
@@ -84,8 +86,8 @@ def determine_task(root, dirname):
     # identify the columns required for each task
     if task == 'ActionValue':
         if not data_dirpath:
-            data_dirpath = \
-                'D:/MandanaResearch/OCD-ReversalLearning' \
+            data_dirpath = prefix + \
+                'MandanaResearch/OCD-ReversalLearning' \
                 '/ReversalLearning-ExcelFiles/ActionValue/'
         get_block = False
 
@@ -97,8 +99,8 @@ def determine_task(root, dirname):
 
     elif task == 'Prob_RL':
         if not data_dirpath:
-            data_dirpath = \
-                'D:/MandanaResearch/OCD-ReversalLearning' \
+            data_dirpath = prefix + \
+                'MandanaResearch/OCD-ReversalLearning' \
                 '/ReversalLearning-ExcelFiles/Prob_RL/'
         get_block = False
 
@@ -110,8 +112,8 @@ def determine_task(root, dirname):
 
     elif task == 'FaceLearning-Learning':
         if not data_dirpath:
-            data_dirpath = \
-                'D:/MandanaResearch/OCD-FaceLearning/FaceLearning-Recall/'
+            data_dirpath = prefix + \
+                'MandanaResearch/OCD-FaceLearning/FaceLearning-Recall/'
         get_block = True
 
         cols = ['Subject', 'Block', 'Trial', 'TextDisplay6.RESP']
@@ -120,8 +122,8 @@ def determine_task(root, dirname):
 
     elif task == 'FaceLearning-Recall':
         if not data_dirpath:
-            data_dirpath = \
-                'D:/MandanaResearch/OCD-FaceLearning/FaceLearning-Recall/'
+            data_dirpath = prefix + \
+                'MandanaResearch/OCD-FaceLearning/FaceLearning-Recall/'
         get_block = True
 
         cols = ['Subject', 'Block', 'Trial', 'CorrectAnswer',
@@ -195,6 +197,10 @@ def main():
     # initialize variables
     trimmed_frames = []
 
+    # get the directory prefix based on the system
+    prefix = 'D:/' if platform.system() == 'Windows' else \
+        '/media/synapt1x/SCHOOLUSB/'
+
     # locate the current directory and file location
     dirname = path.split(path.abspath("__file__"))
 
@@ -209,7 +215,7 @@ def main():
     chdir(data_dirpath)
 
     # Ask user to identify the output directory and create an excel writer
-    output_dirname = get_directory(root, '..', 'Please select '
+    output_dirname = get_directory(root, '../Output/', 'Please select '
                                     'the output directory.')
     output_filename = output_dirname + sep + task + '-' + \
                       time.strftime(
@@ -234,7 +240,7 @@ def main():
 
     # recall in face learning task also requires names from the typed excel
     if task == 'FaceLearning-Recall':
-        temp_path = 'D:/MandanaResearch/OCD-FaceLearning' \
+        temp_path = prefix + 'MandanaResearch/OCD-FaceLearning' \
                     '/RecallResponses/'
         chdir(temp_path)
 
@@ -255,8 +261,8 @@ def main():
                               sheet_name='Reversals')
         winshifts_df.to_excel(excel_writer, index=False, header=True,
                               sheet_name='Winshifts')
-        winshifts_avg_df.to_excel(excel_writer, index=False, header=True,
-                              sheet_name='Avg Winshits')
+        winshifts_avg_df.to_excel(excel_writer, index=True, header=True,
+                              sheet_name='Avg Winshifts')
     excel_writer.save()
 
 

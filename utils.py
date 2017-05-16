@@ -122,7 +122,7 @@ def determine_winshift_proportions(df):
     # determine how many trials followed win feedback for each session
     winshift_errors = df.groupby(['Group', 'Session'])['Error ' \
                                        'Switch'].sum().to_frame('winshifts')
-    winshift_all = df.groupby(['Group', 'Session'])['num followups'].sum(
+    winshift_all = df.groupby(['Group', 'Session'])['win followup'].sum(
         ).to_frame('num followups')
 
     # combine the two Series' into a new output frame for winshifts
