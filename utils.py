@@ -17,6 +17,7 @@ switch by changing sides after choosing a winning option
 
 """
 import numpy as np
+import pandas as pd
 
 
 def determine_error_switches(df, task):
@@ -82,6 +83,58 @@ def determine_max_reversals(df, project):
     # determine max number for each subject grouped by trial
     df['Num Reversals'] = df.groupby(['Subject', 'Session'])[
         'Reversal'].transform('max')
+
+    # extract dataframe for just reversals
+    reversals_df = df[['Subject', 'Session', 'Group',
+                       'Num Reversals']].copy()
+
+    # collapse over subject and session
+    reversals_df.drop_duplicates(inplace=True)
+    reversals_df.sort_values('Group', inplace=True)
+
+    return reversals_df
+
+def determine_winshift_proportions(df):
+    """ Add a column that denotes the proportion of winshifts conducted
+    by a subject in a block """
+
+    ''' winshifts all data '''
+    # first get the total amount of winshift errors in each session
+    df['winshifts'] = df.groupby(['Subject', 'Session'])['Error ' \
+                                                'Switch'].transform('sum')
+
+    # create two columns for use in calculating total win follow-ups
+    df['shifted winlose'] = df['WinLose'].shift(1)
+    df['win followup'] = np.where(df['shifted winlose'] == 'win', 1, 0)
+
+    df['num followups'] = df.groupby(['Subject', 'Session'])['win ' \
+                                                 'followup'].transform('sum')
+
+    # simply output all the data for only winshifts
+    winshifts = df[['Subject', 'Session', 'Group', 'winshifts',
+                    'num followups']].copy()
+
+    # collapse over subject and session
+    winshifts.drop_duplicates(inplace=True)
+    winshifts.sort_values('Group', inplace=True)
+
+    ''' winshift averages '''
+    # determine how many trials followed win feedback for each session
+    winshift_errors = df.groupby(['Subject', 'Session'])['Error ' \
+                                       'Switch'].sum().to_frame('winshifts')
+    winshift_all = df.groupby(['Group', 'Session'])['num followups'].sum(
+        ).to_frame('num followups')
+
+    # combine the two Series' into a new output frame for winshifts
+    winshifts_avg = pd.concat([winshift_errors, winshift_all], 1)
+
+    winshifts_avg['Mean Proportion'] = winshifts_avg['winshifts']/\
+                                   winshifts_avg['num followups']
+
+    # remove temporary columns
+    df.drop('shifted winlose', 1, inplace=True)
+
+    return winshifts, winshifts_avg
 
 
 def determine_confidence(df):

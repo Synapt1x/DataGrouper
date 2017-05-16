@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="009c9dd4-f5ad-45c8-b38c-6f310411950d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Parser.iml" afterPath="$PROJECT_DIR$/.idea/Parser.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grouper.py" afterPath="$PROJECT_DIR$/grouper.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
@@ -22,49 +24,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="grouper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="grouper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grouper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="203" column="74" lean-forward="true" selection-start-line="203" selection-start-column="74" selection-end-line="203" selection-end-column="74" />
+            <state relative-caret-position="706">
+              <caret line="257" column="59" lean-forward="false" selection-start-line="257" selection-start-column="59" selection-end-line="257" selection-end-column="59" />
               <folding>
                 <element signature="e#672#682#0" expanded="true" />
-                <element signature="e#869#1321#0" expanded="true" />
-                <element signature="e#1382#1984#0" expanded="true" />
-                <element signature="e#2026#4415#0" expanded="true" />
-                <element signature="e#4466#6364#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-              <folding>
-                <element signature="e#6853#6917#2" expanded="false" />
-                <element signature="e#7073#7187#2" expanded="false" />
-                <element signature="e#9159#9222#2" expanded="false" />
-                <element signature="e#9848#10036#2" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
+            <state relative-caret-position="400">
+              <caret line="110" column="59" lean-forward="false" selection-start-line="110" selection-start-column="59" selection-end-line="110" selection-end-column="59" />
               <folding>
-                <element signature="e#0#653#1" expanded="true" />
-                <element signature="e#719#1503#0" expanded="true" />
-                <element signature="e#1540#2026#0" expanded="true" />
-                <element signature="e#2074#2990#0" expanded="true" />
-                <element signature="e#3707#4057#0" expanded="true" />
-                <element signature="e#4076#4080#0" expanded="true" />
+                <element signature="e#654#672#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,7 +68,6 @@
       <find>groupby</find>
       <find>Max Rever</find>
       <find>Max Reve</find>
-      <find>data_dirpath</find>
       <find>cols</find>
       <find>project</find>
       <find>Recall Choice</find>
@@ -100,6 +77,12 @@
       <find>excel</find>
       <find>astype</find>
       <find>read_excel</find>
+      <find>Error</find>
+      <find>shift</find>
+      <find>data_dirpath</find>
+      <find>/home</find>
+      <find>Dataframe</find>
+      <find>.Dataframe</find>
     </findStrings>
     <replaceStrings>
       <replace>task</replace>
@@ -111,8 +94,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/grouper.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
       </list>
     </option>
   </component>
@@ -123,10 +106,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="44" />
-    <option name="y" value="-11" />
-    <option name="width" value="1877" />
-    <option name="height" value="1092" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -146,8 +129,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/grouper.py" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -161,71 +144,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.FaceLearning-Recall">
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.ActionValue">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,22 +175,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <module name="Parser" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -310,33 +213,14 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="grouper" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="ActionValue" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -354,7 +238,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -373,7 +257,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -392,7 +276,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -405,12 +289,31 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="grouper" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Parser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.grouper" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ActionValue" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Prob_RL" />
-      <item index="3" class="java.lang.String" itemvalue="Python.FaceLearning-Learning" />
-      <item index="4" class="java.lang.String" itemvalue="Python.FaceLearning-Recall" />
+      <item index="0" class="java.lang.String" itemvalue="Python.ActionValue" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Prob_RL" />
+      <item index="2" class="java.lang.String" itemvalue="Python.FaceLearning-Learning" />
+      <item index="3" class="java.lang.String" itemvalue="Python.FaceLearning-Recall" />
+      <item index="4" class="java.lang.String" itemvalue="Python.grouper" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -518,24 +421,30 @@
       <option name="project" value="LOCAL" />
       <updated>1493759630792</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Finish grouper to fully group Face Learning task data as well">
+      <created>1494006229094</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1494006229094</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="44" y="-11" width="1877" height="1092" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17226666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29583332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.296" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39959225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -543,6 +452,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
@@ -567,7 +477,8 @@
     <MESSAGE value="Change max reversals -&gt; num reversals" />
     <MESSAGE value="Finish adding new sheet for reversals&#10;&#10;Now have data for comparing number of reversals between&#10;tasks" />
     <MESSAGE value="Restructure processing and add processing for face learning&#10;&#10;Added more functionality to now also process face learning.&#10;Still need to export all the excel files to fully process&#10;all of the face learning data, but grouper should now be&#10;able to parse both face learning and reversal tasks." />
-    <option name="LAST_COMMIT_MESSAGE" value="Restructure processing and add processing for face learning&#10;&#10;Added more functionality to now also process face learning.&#10;Still need to export all the excel files to fully process&#10;all of the face learning data, but grouper should now be&#10;able to parse both face learning and reversal tasks." />
+    <MESSAGE value="Finish grouper to fully group Face Learning task data as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish grouper to fully group Face Learning task data as well" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -581,7 +492,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="45" />
+      <option name="time" value="46" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -596,10 +507,88 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
+          <folding>
+            <element signature="e#654#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grouper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#672#682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
+          <folding>
+            <element signature="e#654#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grouper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#672#682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py" />
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
+          <folding>
+            <element signature="e#654#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grouper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#672#682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py" />
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
+          <folding>
+            <element signature="e#654#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grouper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#672#682#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -609,12 +598,7 @@
         <state relative-caret-position="324">
           <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -625,40 +609,17 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5580">
-          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-          <folding>
-            <element signature="e#6853#6917#2" expanded="false" />
-            <element signature="e#7073#7187#2" expanded="false" />
-            <element signature="e#9159#9222#2" expanded="false" />
-            <element signature="e#9848#10036#2" expanded="false" />
-            <element signature="e#10721#10989#0" expanded="false" />
-            <element signature="e#11110#11177#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py" />
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -669,40 +630,17 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5580">
-          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-          <folding>
-            <element signature="e#6853#6917#2" expanded="false" />
-            <element signature="e#7073#7187#2" expanded="false" />
-            <element signature="e#9159#9222#2" expanded="false" />
-            <element signature="e#9848#10036#2" expanded="false" />
-            <element signature="e#10721#10989#0" expanded="false" />
-            <element signature="e#11110#11177#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py" />
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -713,40 +651,17 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2538">
-          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-          <folding>
-            <element signature="e#6853#6917#2" expanded="false" />
-            <element signature="e#7073#7187#2" expanded="false" />
-            <element signature="e#9159#9222#2" expanded="false" />
-            <element signature="e#9848#10036#2" expanded="false" />
-            <element signature="e#10721#10989#0" expanded="false" />
-            <element signature="e#11110#11177#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py" />
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -757,10 +672,6 @@
           <caret line="114" column="23" lean-forward="false" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -770,12 +681,7 @@
         <state relative-caret-position="378">
           <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -786,10 +692,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -799,12 +701,7 @@
         <state relative-caret-position="378">
           <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -815,10 +712,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,12 +721,7 @@
         <state relative-caret-position="378">
           <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -844,10 +732,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -866,13 +750,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2502">
-          <caret line="308" column="45" lean-forward="false" selection-start-line="308" selection-start-column="45" selection-end-line="308" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
@@ -880,24 +758,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pandas/core/indexing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3762">
-          <caret line="1231" column="48" lean-forward="true" selection-start-line="1231" selection-start-column="48" selection-end-line="1231" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pandas/core/indexing.py" />
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="68" lean-forward="true" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -908,10 +775,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -922,10 +785,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -936,28 +795,12 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/aind/lib/python3.6/site-packages/pandas/io/excel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1276">
-          <caret line="228" column="41" lean-forward="true" selection-start-line="228" selection-start-column="41" selection-end-line="228" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pandas/core/indexing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3762">
-          <caret line="1231" column="48" lean-forward="false" selection-start-line="1231" selection-start-column="48" selection-end-line="1231" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/aind/lib/python3.6/site-packages/pandas/io/excel.py" />
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/pandas/core/indexing.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
@@ -976,48 +819,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py" />
+    <entry file="file://$PROJECT_DIR$/grouper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+        <state relative-caret-position="706">
+          <caret line="257" column="59" lean-forward="false" selection-start-line="257" selection-start-column="59" selection-end-line="257" selection-end-column="59" />
           <folding>
-            <element signature="e#6853#6917#2" expanded="false" />
-            <element signature="e#7073#7187#2" expanded="false" />
-            <element signature="e#9159#9222#2" expanded="false" />
-            <element signature="e#9848#10036#2" expanded="false" />
+            <element signature="e#672#682#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
+        <state relative-caret-position="400">
+          <caret line="110" column="59" lean-forward="false" selection-start-line="110" selection-start-column="59" selection-end-line="110" selection-end-column="59" />
           <folding>
-            <element signature="e#0#653#1" expanded="true" />
-            <element signature="e#719#1503#0" expanded="true" />
-            <element signature="e#1540#2026#0" expanded="true" />
-            <element signature="e#2074#2990#0" expanded="true" />
-            <element signature="e#3707#4057#0" expanded="true" />
-            <element signature="e#4076#4080#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grouper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="203" column="74" lean-forward="true" selection-start-line="203" selection-start-column="74" selection-end-line="203" selection-end-column="74" />
-          <folding>
-            <element signature="e#672#682#0" expanded="true" />
-            <element signature="e#869#1321#0" expanded="true" />
-            <element signature="e#1382#1984#0" expanded="true" />
-            <element signature="e#2026#4415#0" expanded="true" />
-            <element signature="e#4466#6364#0" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
           </folding>
         </state>
       </provider>

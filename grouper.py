@@ -85,8 +85,8 @@ def determine_task(root, dirname):
     if task == 'ActionValue':
         if not data_dirpath:
             data_dirpath = \
-                '/home/synapt1x/MandanaResearch/OCD-ReversalLearning' \
-                '/ReversalLearning-ExcelFiles/ActionValue'
+                'D:/MandanaResearch/OCD-ReversalLearning' \
+                '/ReversalLearning-ExcelFiles/ActionValue/'
         get_block = False
 
         cols = ['Subject', 'Session', 'WinningAction[Trial]', 'Proba',
@@ -98,8 +98,8 @@ def determine_task(root, dirname):
     elif task == 'Prob_RL':
         if not data_dirpath:
             data_dirpath = \
-                '/home/synapt1x/MandanaResearch/OCD-ReversalLearning' \
-                '/ReversalLearning-ExcelFiles/Prob_RL'
+                'D:/MandanaResearch/OCD-ReversalLearning' \
+                '/ReversalLearning-ExcelFiles/Prob_RL/'
         get_block = False
 
         cols = ['Subject', 'Session', 'WinningColor[Trial]', 'Proba',
@@ -110,8 +110,8 @@ def determine_task(root, dirname):
 
     elif task == 'FaceLearning-Learning':
         if not data_dirpath:
-            data_dirpath = '/home/synapt1x/MandanaResearch/OCD-FaceLearning' \
-                       '/FaceLearning-Learning'
+            data_dirpath = \
+                'D:/MandanaResearch/OCD-FaceLearning/FaceLearning-Recall/'
         get_block = True
 
         cols = ['Subject', 'Block', 'Trial', 'TextDisplay6.RESP']
@@ -120,8 +120,8 @@ def determine_task(root, dirname):
 
     elif task == 'FaceLearning-Recall':
         if not data_dirpath:
-            data_dirpath = '/home/synapt1x/MandanaResearch/OCD-FaceLearning' \
-                       '/FaceLearning-Recall'
+            data_dirpath = \
+                'D:/MandanaResearch/OCD-FaceLearning/FaceLearning-Recall/'
         get_block = True
 
         cols = ['Subject', 'Block', 'Trial', 'CorrectAnswer',
@@ -139,8 +139,10 @@ def determine_task(root, dirname):
 def process_dataframe(df, task, sort_cols):
     """ Process the data frame for additional calculated columns """
 
-    reversals_df = pd.DataFrame({}) # initialize and leave empty if not
-    # reversal task
+    # initialize and leave empty if not reversal task
+    reversals_df = pd.DataFrame({})
+    winshifts_df = pd.DataFrame({})
+    avg_winshifts_df = pd.DataFrame({})
 
     # sort by the required identifying variables
     df.sort_values(sort_cols, inplace=True)
@@ -161,12 +163,12 @@ def process_dataframe(df, task, sort_cols):
         utils.determine_max_reversals(df, task)
 
         ''' reversals sheet '''
-        reversals_df = df[['Subject', 'Session', 'Group',
-                           'Num Reversals']].copy()
+        reversals_df = utils.determine_max_reversals(df, task)
 
-        # collapse over subject and session
-        reversals_df.drop_duplicates(inplace=True)
-        reversals_df.sort_values('Group', inplace=True)
+        ''' winshifts sheets '''
+        winshifts_df, avg_winshifts_df = \
+            utils.determine_winshift_proportions(df)
+
 
     elif task == 'FaceLearning-Recall':
         ''' process all data for face learning task '''
@@ -185,7 +187,7 @@ def process_dataframe(df, task, sort_cols):
         df.rename(columns={'TextDisplay6.RESP': 'Confidence'},
                   inplace=True)
 
-    return df, reversals_df
+    return df, reversals_df, winshifts_df, avg_winshifts_df
 
 
 def main():
@@ -232,7 +234,7 @@ def main():
 
     # recall in face learning task also requires names from the typed excel
     if task == 'FaceLearning-Recall':
-        temp_path = '/home/synapt1x/MandanaResearch/OCD-FaceLearning' \
+        temp_path = 'D:/MandanaResearch/OCD-FaceLearning' \
                     '/RecallResponses/'
         chdir(temp_path)
 
@@ -243,14 +245,18 @@ def main():
         output_df = pd.merge(output_df, recall_df)
 
     # process the overall dataframe
-    [all_data_df, reversals_df] = process_dataframe(output_df, task,
-                                                    sort_cols)
+    [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \
+        process_dataframe(output_df, task, sort_cols)
 
     # format and save the output excel file
     all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')
     if task == 'ActionValue' or task == 'Prob_RL':
         reversals_df.to_excel(excel_writer, index=False,
                               sheet_name='Reversals')
+        winshifts_df.to_excel(excel_writer, index=False, header=True,
+                              sheet_name='Winshifts')
+        winshifts_avg_df.to_excel(excel_writer, index=False, header=True,
+                              sheet_name='Avg Winshits')
     excel_writer.save()
 
 
