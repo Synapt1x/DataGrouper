@@ -120,7 +120,7 @@ def determine_winshift_proportions(df):
 
     ''' winshift averages '''
     # determine how many trials followed win feedback for each session
-    winshift_errors = df.groupby(['Subject', 'Session'])['Error ' \
+    winshift_errors = df.groupby(['Group', 'Session'])['Error ' \
                                        'Switch'].sum().to_frame('winshifts')
     winshift_all = df.groupby(['Group', 'Session'])['num followups'].sum(
         ).to_frame('num followups')
@@ -132,7 +132,7 @@ def determine_winshift_proportions(df):
                                    winshifts_avg['num followups']
 
     # remove temporary columns
-    df.drop('shifted winlose', 1, inplace=True)
+    df.drop(['shifted winlose', 'win followup'], 1, inplace=True)
 
     return winshifts, winshifts_avg
 

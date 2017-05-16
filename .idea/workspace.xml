@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Parser.iml" afterPath="$PROJECT_DIR$/.idea/Parser.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grouper.py" afterPath="$PROJECT_DIR$/grouper.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +17,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DataGrouper$grouper.coverage" NAME="grouper Coverage Results" MODIFIED="1493746952625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DataGrouper$FaceLearning_Recall.coverage" NAME="FaceLearning-Recall Coverage Results" MODIFIED="1494006192800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/DataGrouper$ActionValue.coverage" NAME="ActionValue Coverage Results" MODIFIED="1493747243213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DataGrouper$ActionValue.coverage" NAME="ActionValue Coverage Results" MODIFIED="1494954174835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/DataGrouper$FaceLearning_Learning.coverage" NAME="FaceLearning-Learning Coverage Results" MODIFIED="1494006185420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -27,10 +26,15 @@
       <file leaf-file-name="grouper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grouper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="257" column="59" lean-forward="false" selection-start-line="257" selection-start-column="59" selection-end-line="257" selection-end-column="59" />
+            <state relative-caret-position="144">
+              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding>
+                <element signature="e#0#671#1" expanded="true" />
                 <element signature="e#672#682#0" expanded="true" />
+                <element signature="e#869#1321#0" expanded="true" />
+                <element signature="e#1382#1984#0" expanded="true" />
+                <element signature="e#4400#6336#0" expanded="true" />
+                <element signature="e#6355#9044#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,10 +43,17 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="110" column="59" lean-forward="false" selection-start-line="110" selection-start-column="59" selection-end-line="110" selection-end-column="59" />
+            <state relative-caret-position="365">
+              <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding>
+                <element signature="e#0#653#1" expanded="true" />
                 <element signature="e#654#672#0" expanded="true" />
+                <element signature="e#739#1523#0" expanded="true" />
+                <element signature="e#1560#2046#0" expanded="true" />
+                <element signature="e#2094#3321#0" expanded="true" />
+                <element signature="e#5144#5785#0" expanded="true" />
+                <element signature="e#5824#6174#0" expanded="true" />
+                <element signature="e#6193#6197#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,9 +94,13 @@
       <find>/home</find>
       <find>Dataframe</find>
       <find>.Dataframe</find>
+      <find>data_dirname</find>
+      <find>dirname</find>
+      <find>/home/</find>
     </findStrings>
     <replaceStrings>
       <replace>task</replace>
+      <replace>$PROJECT_DIR$/../../../../</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -94,8 +109,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/grouper.py" />
         <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/grouper.py" />
       </list>
     </option>
   </component>
@@ -106,10 +121,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="44" />
+    <option name="y" value="-11" />
+    <option name="width" value="1877" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -130,7 +145,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -213,82 +228,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="ActionValue" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
-      <option name="PARAMETERS" value="ActionValue" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Prob_RL" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
-      <option name="PARAMETERS" value="Prob_RL" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="FaceLearning-Learning" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
-      <option name="PARAMETERS" value="FaceLearning-Learning" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="FaceLearning-Recall" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\ccadonic\AppData\Local\Continuum\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
-      <option name="PARAMETERS" value="FaceLearning-Recall" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="grouper" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -308,12 +247,88 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="ActionValue" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Parser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
+      <option name="PARAMETERS" value="ActionValue" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Prob_RL" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Parser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
+      <option name="PARAMETERS" value="Prob_RL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="FaceLearning-Learning" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Parser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
+      <option name="PARAMETERS" value="FaceLearning-Learning" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="FaceLearning-Recall" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Parser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/grouper.py" />
+      <option name="PARAMETERS" value="FaceLearning-Recall" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.ActionValue" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Prob_RL" />
-      <item index="2" class="java.lang.String" itemvalue="Python.FaceLearning-Learning" />
-      <item index="3" class="java.lang.String" itemvalue="Python.FaceLearning-Recall" />
-      <item index="4" class="java.lang.String" itemvalue="Python.grouper" />
+      <item index="0" class="java.lang.String" itemvalue="Python.grouper" />
+      <item index="1" class="java.lang.String" itemvalue="Python.ActionValue" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Prob_RL" />
+      <item index="3" class="java.lang.String" itemvalue="Python.FaceLearning-Learning" />
+      <item index="4" class="java.lang.String" itemvalue="Python.FaceLearning-Recall" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -428,23 +443,31 @@
       <option name="project" value="LOCAL" />
       <updated>1494006229094</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added extra parsing for winshift proportions&#10;&#10;Need to debug for a bit, trying to output the &#10;new dataframes to new sheets appropriately.">
+      <created>1494953442016</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1494953442016</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="44" y="-11" width="1877" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17226666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29583332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29546666" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3985729" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -452,7 +475,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
@@ -478,7 +500,8 @@
     <MESSAGE value="Finish adding new sheet for reversals&#10;&#10;Now have data for comparing number of reversals between&#10;tasks" />
     <MESSAGE value="Restructure processing and add processing for face learning&#10;&#10;Added more functionality to now also process face learning.&#10;Still need to export all the excel files to fully process&#10;all of the face learning data, but grouper should now be&#10;able to parse both face learning and reversal tasks." />
     <MESSAGE value="Finish grouper to fully group Face Learning task data as well" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish grouper to fully group Face Learning task data as well" />
+    <MESSAGE value="Added extra parsing for winshift proportions&#10;&#10;Need to debug for a bit, trying to output the &#10;new dataframes to new sheets appropriately." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added extra parsing for winshift proportions&#10;&#10;Need to debug for a bit, trying to output the &#10;new dataframes to new sheets appropriately." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -492,7 +515,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="46" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -503,20 +526,64 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/grouper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="4734">
+          <caret line="263" column="10" lean-forward="false" selection-start-line="263" selection-start-column="10" selection-end-line="263" selection-end-column="10" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
+        <state relative-caret-position="486">
+          <caret line="113" column="31" lean-forward="true" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grouper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4626">
+          <caret line="257" column="10" lean-forward="true" selection-start-line="257" selection-start-column="10" selection-end-line="257" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#671#1" expanded="true" />
+            <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="114" column="8" lean-forward="true" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#653#1" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -526,7 +593,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -536,7 +608,14 @@
         <state relative-caret-position="1547">
           <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -546,7 +625,44 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#653#1" expanded="true" />
+            <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grouper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#671#1" expanded="true" />
+            <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -557,7 +673,14 @@
         <state relative-caret-position="288">
           <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -567,7 +690,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -578,7 +706,14 @@
         <state relative-caret-position="288">
           <caret line="91" column="4" lean-forward="false" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="79" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -588,7 +723,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -598,7 +738,14 @@
         <state relative-caret-position="324">
           <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -608,7 +755,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,7 +771,14 @@
         <state relative-caret-position="162">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -629,7 +788,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -640,7 +804,14 @@
         <state relative-caret-position="162">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,7 +821,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -661,7 +837,14 @@
         <state relative-caret-position="162">
           <caret line="85" column="0" lean-forward="true" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -671,7 +854,12 @@
         <state relative-caret-position="738">
           <caret line="114" column="23" lean-forward="false" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -681,7 +869,14 @@
         <state relative-caret-position="378">
           <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -691,7 +886,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -701,7 +901,14 @@
         <state relative-caret-position="378">
           <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -711,7 +918,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -721,7 +933,14 @@
         <state relative-caret-position="378">
           <caret line="62" column="18" lean-forward="false" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -731,7 +950,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -764,7 +988,14 @@
         <state relative-caret-position="216">
           <caret line="12" column="68" lean-forward="true" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -774,7 +1005,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -784,7 +1020,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -794,7 +1035,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -825,20 +1071,32 @@
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py" />
     <entry file="file://$PROJECT_DIR$/grouper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="257" column="59" lean-forward="false" selection-start-line="257" selection-start-column="59" selection-end-line="257" selection-end-column="59" />
+        <state relative-caret-position="144">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
+            <element signature="e#0#671#1" expanded="true" />
             <element signature="e#672#682#0" expanded="true" />
+            <element signature="e#869#1321#0" expanded="true" />
+            <element signature="e#1382#1984#0" expanded="true" />
+            <element signature="e#4400#6336#0" expanded="true" />
+            <element signature="e#6355#9044#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="110" column="59" lean-forward="false" selection-start-line="110" selection-start-column="59" selection-end-line="110" selection-end-column="59" />
+        <state relative-caret-position="365">
+          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
+            <element signature="e#0#653#1" expanded="true" />
             <element signature="e#654#672#0" expanded="true" />
+            <element signature="e#739#1523#0" expanded="true" />
+            <element signature="e#1560#2046#0" expanded="true" />
+            <element signature="e#2094#3321#0" expanded="true" />
+            <element signature="e#5144#5785#0" expanded="true" />
+            <element signature="e#5824#6174#0" expanded="true" />
+            <element signature="e#6193#6197#0" expanded="true" />
           </folding>
         </state>
       </provider>
