@@ -1,9 +1,9 @@
-### Data Grouper
+# Data Grouper
 
 ## Created by: Chris Cadonic
 ## For use in data aggregation for statistical analysis
 
-# Utility
+### Utility
 
 This program is specific to grouping and setting up data for analysis for
 previous projects conducted in Dr. Modirrousta's laboratory.
@@ -16,7 +16,7 @@ Plans for this project are to initially collect, group, and format data to
 be ready for statistical analysis for two particular outstanding projects in
 Dr. Modirrousta's lab.
 
-# Plans for this Project
+### Plans for this Project
 
 I plan to extend the scope of this project to also combine my previous work
 for Dr. Kelly [here](https://github.com/Synapt1x/PythonDataProcessor),
@@ -31,12 +31,15 @@ any issues with their dataset. Different output formats, for instance simple
  Excel spreadshet outputs, SPSS outputs, or R outputs, will all be
  incorporated into the final product.
 
-# Running
+### Running
 
 Running this will be done via an executeable by freezing the project, much
 like what was done [here](https://github.com/Synapt1x/PythonDataProcessor).
+More to follow once the project is further along in development, as in its
+current form, it is strictly used to aggregate two oustanding projects for
+Dr. Modirrousta.
 
-# To be continued...
+### To be continued...
 
 I will continue to work on this as I have time, so that I can maintain and
 distribute this software for other labs to use in situations where they
