@@ -209,7 +209,7 @@ def main():
     root.withdraw()
 
     [data_dirpath, cols, sort_cols, task, get_block] = determine_task(root,
-                                                                  dirname)
+                                                      dirname, prefix)
 
     # change to data directory
     chdir(data_dirpath)

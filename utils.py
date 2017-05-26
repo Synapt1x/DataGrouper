@@ -114,6 +114,10 @@ def determine_winshift_proportions(df):
     winshifts = df[['Subject', 'Session', 'Group', 'winshifts',
                     'num followups']].copy()
 
+    # calculate winshift proportions for each session
+    winshifts['Winshift Proportions'] = winshifts['winshifts']/winshifts[
+        'num followups']
+
     # collapse over subject and session
     winshifts.drop_duplicates(inplace=True)
     winshifts.sort_values('Group', inplace=True)
