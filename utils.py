@@ -18,7 +18,7 @@ switch by changing sides after choosing a winning option
 """
 import numpy as np
 import pandas as pd
-
+from itertools import permutations
 
 def determine_error_switches(df, task):
     """ Add a column showing whether erroneous reversals are made """
@@ -157,6 +157,7 @@ def determine_confidence(df):
 
     return correct_confidence
 
+
 def determine_face_accuracy(df):
     """ Determine whether the subject was correct or not in either recalling 
     or recognizing the face """
@@ -166,6 +167,35 @@ def determine_face_accuracy(df):
     recog_acc = np.where(df['Recog Choice'] == df['CorrectAnswer'], 1, 0)
 
     return recall_acc, recog_acc
+
+
+def goodman_kruskal_gamma(m, n):
+    """
+    From public implementations of the goodman kruskal gamma calculation, 
+    this function determines the gamma correlation between two ordinal 
+    variables.
+    
+    :param m: a list of values for variable 1
+    :param n: a list of values for variable 2
+    :return: return the gamma correlation between variable 1 and variable 2
+    """
+    numer = 0
+    denom = 0
+    # complete calculation for all possible pairs (i, j)
+    for (i, j) in permutations(range(len(m)), 2):
+        # determine sign of multiplied terms for pair (i, j)
+        m_dir = m[i] - m[j]
+        n_dir = n[i] - n[j]
+        product = m_dir * n_dir
+
+        # add to num if pos; add to denom if negative
+        if product > 0:
+            numer += 1
+            denom += 1
+        elif product < 0:
+            numer -= 1
+            denom += 1
+    return numer / float(denom)
 
 
 def main():
