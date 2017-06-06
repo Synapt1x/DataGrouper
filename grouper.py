@@ -73,7 +73,7 @@ def determine_task(root, dirname, prefix):
     data_dirpath = ''
     cols = []
     sort_cols = []
-
+    get_block = False
 
     if len(sys.argv) > 1:
         task = str(sys.argv[1])
@@ -113,7 +113,7 @@ def determine_task(root, dirname, prefix):
     elif task == 'FaceLearning-Learning':
         if not data_dirpath:
             data_dirpath = prefix + \
-                'MandanaResearch/OCD-FaceLearning/FaceLearning-Recall/'
+                'MandanaResearch/OCD-FaceLearning/FaceLearning-Learning/'
         get_block = True
 
         cols = ['Subject', 'Block', 'Trial', 'TextDisplay6.RESP']
@@ -130,6 +130,11 @@ def determine_task(root, dirname, prefix):
                 'TextDisplay35.RESP', 'TextDisplay36.RESP']
 
         sort_cols = ['Subject', 'Block', 'Trial']
+    elif task == 'FaceLearning':
+        if not data_dirpath:
+            data_dirpath = prefix + \
+                'MandanaResearch/OCD-Facelearning/Output/'
+        get_block = False
 
     # print which columns will be pulled into the output excel
     print("Current columns to be captured from the excel files:\n")
@@ -138,7 +143,7 @@ def determine_task(root, dirname, prefix):
     return data_dirpath, cols, sort_cols, task, get_block
 
 
-def process_dataframe(df, task, sort_cols):
+def process_dataframe(df, task, sort_cols, output_dirname):
     """ Process the data frame for additional calculated columns """
 
     # initialize and leave empty if not reversal task
@@ -150,7 +155,7 @@ def process_dataframe(df, task, sort_cols):
     df.sort_values(sort_cols, inplace=True)
 
     # assign groups based on subject number
-    df['Group'] = df.apply(utils.assign_group, axis=1)
+    df['Group'] = df.apply(utils.assign_group, task=task, axis=1)
 
     if task == 'ActionValue' or task == 'Prob_RL':
         ''' all data for reversal task '''
@@ -182,12 +187,19 @@ def process_dataframe(df, task, sort_cols):
         #  the face
         df['Recall Acc'], df['Recog Acc'] = utils.determine_face_accuracy(df)
 
+        # scale confidence measures into proportions
+        df['Recall Confidence'] = df['Recall Confidence'] / 5
+        df['Recog Confidence'] = df['Recog Confidence'] / 5
+
     elif task == 'FaceLearning-Learning':
         ''' process all data for face learning acquisition task '''
 
         # firstly rename the columns as appropriate
-        df.rename(columns={'TextDisplay6.RESP': 'Confidence'},
+        df.rename(columns={'TextDisplay6.RESP': 'Learning Confidence'},
                   inplace=True)
+
+        # scale learning confidence into proportion
+        df['Learning Confidence'] = df['Learning Confidence']/5
 
     return df, reversals_df, winshifts_df, avg_winshifts_df
 
@@ -222,47 +234,60 @@ def main():
         "%d-%m-%y") + '.xlsx'
     excel_writer = pd.ExcelWriter(output_filename, engine='xlsxwriter')
 
-    # get a list of all data files in data directory chosen
-    allFiles = glob.glob("*.xlsx")
-    try:
-        num_files = len(allFiles)
-    except:
-        messagebox.showinfo(
-            "No excel spreadsheets found. Please restart the program.")
+    if task == 'FaceLearning':
+        # first merge the learning and recall files
+        all_data_df = utils.merge_facelearning(data_dirpath)
 
-    # parse over all data files
-    for file_name in allFiles:
-        # store the dataframe after only selecting necessary columns
-        trimmed_frames.append(process_file(file_name, cols, get_block))
+        [summary_df, plot_df] = utils.calculate_facelearning_measures(
+            all_data_df)
+    else:
 
-    # concatenate the dataframes into one and process it
-    output_df = pd.concat(trimmed_frames)
+        # get a list of all data files in data directory chosen
+        allFiles = glob.glob("*.xlsx")
+        try:
+            num_files = len(allFiles)
+        except:
+            messagebox.showinfo(
+                "No excel spreadsheets found. Please restart the program.")
 
-    # recall in face learning task also requires names from the typed excel
-    if task == 'FaceLearning-Recall':
-        temp_path = prefix + 'MandanaResearch/OCD-FaceLearning' \
-                    '/RecallResponses/'
-        chdir(temp_path)
+        # parse over all data files
+        for file_name in allFiles:
+            # store the dataframe after only selecting necessary columns
+            trimmed_frames.append(process_file(file_name, cols, get_block))
 
-        recall_cols = ['Subject', 'Block', 'Trial', 'Recall Choice', 'Recog '
-                        'Choice']
-        file_name = glob.glob("*.xlsx")[0]
-        recall_df = process_file(file_name, recall_cols, False)
-        output_df = pd.merge(output_df, recall_df)
+        # concatenate the dataframes into one and process it
+        output_df = pd.concat(trimmed_frames)
 
-    # process the overall dataframe
-    [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \
-        process_dataframe(output_df, task, sort_cols)
+        # recall in face learning task also requires names from the typed excel
+        if task == 'FaceLearning-Recall':
+            temp_path = prefix + 'MandanaResearch/OCD-FaceLearning' \
+                        '/RecallResponses/'
+            chdir(temp_path)
+
+            recall_cols = ['Subject', 'Block', 'Trial', 'Recall Choice', 'Recog '
+                            'Choice']
+            file_name = glob.glob("*.xlsx")[0]
+            recall_df = process_file(file_name, recall_cols, False)
+            output_df = pd.merge(output_df, recall_df)
+
+        # process the overall dataframe
+        [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \
+            process_dataframe(output_df, task, sort_cols, output_dirname)
 
     # format and save the output excel file
     all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')
     if task == 'ActionValue' or task == 'Prob_RL':
         reversals_df.to_excel(excel_writer, index=False,
-                              sheet_name='Reversals')
+                              sheet_name = 'Reversals')
         winshifts_df.to_excel(excel_writer, index=False, header=True,
-                              sheet_name='Winshifts')
+                              sheet_name = 'Winshifts')
         winshifts_avg_df.to_excel(excel_writer, index=True, header=True,
-                              sheet_name='Avg Winshifts')
+                              sheet_name = 'Avg Winshifts')
+    if task == 'FaceLearning':
+        summary_df.to_excel(excel_writer, index=False,
+                            sheet_name = 'Analysis')
+        plot_df.to_excel(excel_writer, index=False,
+                            sheet_name = 'Means')
     excel_writer.save()
 
 
