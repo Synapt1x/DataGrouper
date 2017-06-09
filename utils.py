@@ -22,9 +22,9 @@ from itertools import permutations
 from tkinter import messagebox
 
 
-def goodman_kruskal_gamma(m, n):
+def gkgamma(m, n):
     """
-    From public implementations of the goodman kruskal gamma calculation, 
+    From sample calculations of the goodman kruskal gamma calculation, 
     this function determines the gamma correlation between two ordinal 
     variables.
 
@@ -32,23 +32,22 @@ def goodman_kruskal_gamma(m, n):
     :param n: a list of values for variable 2
     :return: return the gamma correlation between variable 1 and variable 2
     """
-    numer = 0
-    denom = 0
-    # complete calculation for all possible pairs (i, j)
-    for (i, j) in permutations(range(len(m)), 2):
-        # determine sign of multiplied terms for pair (i, j)
-        m_dir = m[i] - m[j]
-        n_dir = n[i] - n[j]
-        product = m_dir * n_dir
+    nc = 0 # number of concordant pairs or noninversions
+    nd = 0 # number of discordant pairs or inversions
 
-        # add to num if pos; add to denom if negative
-        if product > 0:
-            numer += 1
-            denom += 1
-        elif product < 0:
-            numer -= 1
-            denom += 1
-    return numer / float(denom)
+    # complete calculation for pairs (i, j)
+    for (i, j) in permutations(range(len(m)), 2):
+        # determine number of inversiona and noninversions
+        diff_m = m[i] - m[j]
+        diff_n = n[i] - n[j]
+
+        product = diff_m * diff_n
+
+        if product > 0: # noninversion
+            nc += 1
+        elif product < 0: # inversion
+            nd += 1
+    return (nc - nd)/(nc + nd)
 
 
 def determine_error_switches(df, task):
@@ -235,6 +234,11 @@ def calculate_facelearning_measures(all_data_df):
     """ Calculate mean performance statistics and JOL, RCJ and FOK measures
     for the face learning task """
 
+    # initialize variables
+    rcj = []
+    fok = []
+    block_indices = []
+
     # firstly, make a copy of the dataframe
     df = all_data_df.copy()
 
@@ -248,9 +252,28 @@ def calculate_facelearning_measures(all_data_df):
     df['JOL'] = df['Recall Corr'] - grouper['Learning ' \
                                             'Confidence'].transform('sum')/6
 
+    # calculate gamma measures for RCJ and FOK
+    for group in grouper:
+        # extract confidence judgments
+        recall_conf = list(group[1]['Recall Confidence'].values)
+        recog_conf = list(group[1]['Recog Confidence'].values)
+
+        # extract memory performance
+        recall_acc = list(group[1]['Recall Acc'].values)
+        recog_acc = list(group[1]['Recog Acc'].values)
+
+        # record which subject/group combination had each gamma
+        block_indices.append(group[0])
+
+        # calculate gamma measures and store these into lists
+        rcj.append(gkgamma(recall_conf, recall_acc))
+        fok.append(gkgamma(recog_conf, recog_acc))
+
+    # TODO: amalgamate rcj and fok into series for the df
+
     # amalgamate the necessary results into one df grouped by block
     summary_df = df[['Subject', 'Block', 'Group', 'Recall '
-                            'Corr', 'Recog Corr']].drop_duplicates()
+                            'Corr', 'Recog Corr', 'JOL']].drop_duplicates()
     summary_df.sort_values(['Group', 'Subject', 'Block'], inplace=True)
 
     # aggregate plot_df for summarizing means
