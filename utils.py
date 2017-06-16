@@ -47,8 +47,10 @@ def gkgamma(m, n):
             nc += 1
         elif product < 0: # inversion
             nd += 1
-    return (nc - nd)/(nc + nd)
-
+    try:
+        return (nc - nd)/(nc + nd)
+    except ZeroDivisionError:
+        return 0
 
 def determine_error_switches(df, task):
     """ Add a column showing whether erroneous reversals are made """
@@ -269,11 +271,11 @@ def calculate_facelearning_measures(all_data_df):
         rcj.append(gkgamma(recall_conf, recall_acc))
         fok.append(gkgamma(recog_conf, recog_acc))
 
-    # TODO: amalgamate rcj and fok into series for the df
-
     # amalgamate the necessary results into one df grouped by block
     summary_df = df[['Subject', 'Block', 'Group', 'Recall '
                             'Corr', 'Recog Corr', 'JOL']].drop_duplicates()
+    summary_df['RCJ'] = rcj
+    summary_df['FOK'] = fok
     summary_df.sort_values(['Group', 'Subject', 'Block'], inplace=True)
 
     # aggregate plot_df for summarizing means
