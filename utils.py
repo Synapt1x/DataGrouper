@@ -34,6 +34,7 @@ def gkgamma(m, n):
     """
     nc = 0 # number of concordant pairs or noninversions
     nd = 0 # number of discordant pairs or inversions
+    nt = 0 # number of ties
 
     # complete calculation for pairs (i, j)
     for (i, j) in permutations(range(len(m)), 2):
@@ -47,10 +48,9 @@ def gkgamma(m, n):
             nc += 1
         elif product < 0: # inversion
             nd += 1
-    try:
-        return (nc - nd)/(nc + nd)
-    except ZeroDivisionError:
-        return 0
+        else: # tie
+            nt += 1
+    return (nc - nd)/(nc + nd + nt)
 
 def determine_error_switches(df, task):
     """ Add a column showing whether erroneous reversals are made """
