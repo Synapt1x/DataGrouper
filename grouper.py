@@ -185,7 +185,7 @@ def process_dataframe(df, task, sort_cols, output_dirname):
 
         # determine whether the subject had correctly recalled or recognized
         #  the face
-        df['Recall Acc'], df['Recog Acc'] = utils.determine_face_accuracy(df)
+        df = utils.determine_face_accuracy(df)
 
         # scale confidence measures into proportions
         df['Recall Confidence'] = df['Recall Confidence'] / 5

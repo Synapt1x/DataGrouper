@@ -191,9 +191,9 @@ def determine_confidence(df):
 
     # set any confidence levels to 0 if they did not actually answer
     correct_confidence = np.where(df['Recall Choice'] != 'nan', df['Recall '
-                                                           'Confidence'], 0)
+                                                        'Confidence'], 'nan')
 
-    return correct_confidence
+    return correct_confidence.astype(float)
 
 
 def determine_face_accuracy(df):
@@ -204,7 +204,12 @@ def determine_face_accuracy(df):
     recall_acc = np.where(df['Recall Choice'] == df['CorrectAnswer'], 1, 0)
     recog_acc = np.where(df['Recog Choice'] == df['CorrectAnswer'], 1, 0)
 
-    return recall_acc, recog_acc
+    df['Recall Acc'], df['Recog Acc'] = recall_acc, recog_acc
+    df['Recall Acc'] = np.where(df['Recall Choice'] != 'nan',
+                                df['Recall Acc'], 'nan')
+    df['Recall Acc'] = df['Recall Acc'].astype(float)
+
+    return df
 
 
 def merge_facelearning(data_dirname):
@@ -247,7 +252,10 @@ def calculate_facelearning_measures(all_data_df):
     grouper = df.groupby(['Subject', 'Block'])
 
     # first get the total amount of correct answers in each block
-    df['Recall Corr'] = grouper['Recall Acc'].transform('sum')/6
+    df['Recall Count'] = np.where(df['Recall Acc'].isnull(), 0, 1)
+    df['Recall Count'] = grouper['Recall Count'].transform('sum')
+    df['Recall Corr'] = grouper['Recall Acc'].transform('sum')/df['Recall ' \
+                                                                  'Count']
     df['Recog Corr'] = grouper['Recog Acc'].transform('sum')/6
 
     # next run the gamma calc. and JOL calc. for each block
@@ -280,10 +288,11 @@ def calculate_facelearning_measures(all_data_df):
 
     # aggregate plot_df for summarizing means
     plot_grouper = summary_df.groupby(['Group'])
-    new_df = plot_grouper[['Recall Corr', 'Recog Corr']].transform('mean')
+    new_df = plot_grouper[['Recall Corr', 'Recog Corr', 'JOL',
+                           'RCJ', 'FOK']].transform('mean')
     new_df['Group'] = summary_df['Group']
 
-    cols = ['Group', 'Recall Corr', 'Recog Corr']
+    cols = ['Group', 'Recall Corr', 'Recog Corr', 'JOL', 'RCJ', 'FOK']
 
     plot_df = new_df[cols].drop_duplicates()
 
