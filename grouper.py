@@ -26,6 +26,7 @@ from os import chdir, path, sep
 import pandas as pd
 import utils
 from tkinter import Tk, filedialog, messagebox
+from custom_gui import ask_columns
 import glob, time
 import platform
 
@@ -45,6 +46,12 @@ def get_directory(root, initial_dir, title_dir):
         exit()
 
 
+def process_example(df):
+    """ Process the first data frame in the data directory to determine
+    what will be needed from this data. """
+    cols = ask_columns(list(df.columns.values))
+
+
 def process_file(file_name, cols, get_block = False):
     """ Parse an excel file and return a dataframe trimmed based on which 
     columns are required for the given task """
@@ -54,6 +61,9 @@ def process_file(file_name, cols, get_block = False):
 
     # now read excel file data into a DataFrame
     datafile = pd.read_excel(excel)
+
+    # if columns have not been specified yet, call process example to get info
+    sort_cols = process_example(datafile)
 
     # split name in the case of the face learning task
     if get_block:
@@ -234,61 +244,67 @@ def main():
         "%d-%m-%y") + '.xlsx'
     excel_writer = pd.ExcelWriter(output_filename, engine='xlsxwriter')
 
-    if task == 'FaceLearning':
-        # first merge the learning and recall files
-        all_data_df = utils.merge_facelearning(data_dirpath)
+    try:
+        if task == 'FaceLearning':
+            # first merge the learning and recall files
+            all_data_df = utils.merge_facelearning(data_dirpath)
 
-        [summary_df, plot_df] = utils.calculate_facelearning_measures(
-            all_data_df)
-    else:
+            [summary_df, plot_df] = utils.calculate_facelearning_measures(
+                all_data_df)
+        else:
 
-        # get a list of all data files in data directory chosen
-        allFiles = glob.glob("*.xlsx")
-        try:
-            num_files = len(allFiles)
-        except:
-            messagebox.showinfo(
-                "No excel spreadsheets found. Please restart the program.")
+            # get a list of all data files in data directory chosen
+            allFiles = glob.glob("*.xlsx")
+            try:
+                num_files = len(allFiles)
+            except:
+                messagebox.showinfo(
+                    "No excel spreadsheets found. Please restart the program.")
 
-        # parse over all data files
-        for file_name in allFiles:
-            # store the dataframe after only selecting necessary columns
-            trimmed_frames.append(process_file(file_name, cols, get_block))
+            # parse over all data files
+            for file_name in allFiles:
+                # store the dataframe after only selecting necessary columns
+                trimmed_frames.append(process_file(file_name, cols, get_block))
 
-        # concatenate the dataframes into one and process it
-        output_df = pd.concat(trimmed_frames)
+            # concatenate the dataframes into one and process it
+            output_df = pd.concat(trimmed_frames)
 
-        # recall in face learning task also requires names from the typed excel
-        if task == 'FaceLearning-Recall':
-            temp_path = prefix + 'MandanaResearch/OCD-FaceLearning' \
-                        '/RecallResponses/'
-            chdir(temp_path)
+            # recall in face learning task also requires names from the typed excel
+            if task == 'FaceLearning-Recall':
+                temp_path = prefix + 'MandanaResearch/OCD-FaceLearning' \
+                            '/RecallResponses/'
+                chdir(temp_path)
 
-            recall_cols = ['Subject', 'Block', 'Trial', 'Recall Choice', 'Recog '
-                            'Choice']
-            file_name = glob.glob("*.xlsx")[0]
-            recall_df = process_file(file_name, recall_cols, False)
-            output_df = pd.merge(output_df, recall_df)
+                recall_cols = ['Subject', 'Block', 'Trial', 'Recall Choice', 'Recog '
+                                'Choice']
+                file_name = glob.glob("*.xlsx")[0]
+                recall_df = process_file(file_name, recall_cols, False)
+                output_df = pd.merge(output_df, recall_df)
 
-        # process the overall dataframe
-        [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \
-            process_dataframe(output_df, task, sort_cols, output_dirname)
+            # process the overall dataframe
+            [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \
+                process_dataframe(output_df, task, sort_cols, output_dirname)
 
-    # format and save the output excel file
-    all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')
-    if task == 'ActionValue' or task == 'Prob_RL':
-        reversals_df.to_excel(excel_writer, index=False,
-                              sheet_name = 'Reversals')
-        winshifts_df.to_excel(excel_writer, index=False, header=True,
-                              sheet_name = 'Winshifts')
-        winshifts_avg_df.to_excel(excel_writer, index=True, header=True,
-                              sheet_name = 'Avg Winshifts')
-    if task == 'FaceLearning':
-        summary_df.to_excel(excel_writer, index=False,
-                            sheet_name = 'Analysis')
-        plot_df.to_excel(excel_writer, index=False,
-                            sheet_name = 'Means')
-    excel_writer.save()
+        # format and save the output excel file
+        all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')
+        if task == 'ActionValue' or task == 'Prob_RL':
+            reversals_df.to_excel(excel_writer, index=False,
+                                  sheet_name = 'Reversals')
+            winshifts_df.to_excel(excel_writer, index=False, header=True,
+                                  sheet_name = 'Winshifts')
+            winshifts_avg_df.to_excel(excel_writer, index=True, header=True,
+                                  sheet_name = 'Avg Winshifts')
+        if task == 'FaceLearning':
+            summary_df.to_excel(excel_writer, index=False,
+                                sheet_name = 'Analysis')
+            plot_df.to_excel(excel_writer, index=False,
+                                sheet_name = 'Means')
+        excel_writer.save()
+    except ValueError:
+        messagebox.showwarning('Warning', 'No Excel files found in data '
+                                          'directory.')
+    except IndexError:
+        messagebox.showwarning('Warning', 'Data directory is empty.')
 
 
 if __name__=='__main__':

@@ -52,6 +52,7 @@ def gkgamma(m, n):
             nt += 1
     return (nc - nd)/(nc + nd + nt)
 
+
 def determine_error_switches(df, task):
     """ Add a column showing whether erroneous reversals are made """
 
@@ -230,9 +231,9 @@ def merge_facelearning(data_dirname):
 
             datafiles.append(datafile)
         except:
-            messagebox.WARNING("Error in loading excel; check to make sure "
-                               "the other face learning excel files have "
-                               "been output already.")
+            messagebox.showwarning("Error in loading excel; check to make "
+                                "sure the other face learning excel files " 
+                                "have been output already.")
             return
 
     return pd.merge(datafiles[0], datafiles[1])
@@ -299,8 +300,5 @@ def calculate_facelearning_measures(all_data_df):
     return summary_df, plot_df
 
 
-def main():
-    pass
-
 if __name__ == '__main__':
-    main()
+    pass
