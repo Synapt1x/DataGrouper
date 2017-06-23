@@ -46,12 +46,6 @@ def get_directory(root, initial_dir, title_dir):
         exit()
 
 
-def process_example(df):
-    """ Process the first data frame in the data directory to determine
-    what will be needed from this data. """
-    cols = ask_columns(list(df.columns.values))
-
-
 def process_file(file_name, cols, get_block = False):
     """ Parse an excel file and return a dataframe trimmed based on which 
     columns are required for the given task """
@@ -61,9 +55,6 @@ def process_file(file_name, cols, get_block = False):
 
     # now read excel file data into a DataFrame
     datafile = pd.read_excel(excel)
-
-    # if columns have not been specified yet, call process example to get info
-    sort_cols = process_example(datafile)
 
     # split name in the case of the face learning task
     if get_block:
@@ -146,10 +137,6 @@ def determine_task(root, dirname, prefix):
                 'MandanaResearch/OCD-Facelearning/Output/'
         get_block = False
 
-    # print which columns will be pulled into the output excel
-    print("Current columns to be captured from the excel files:\n")
-    for col in cols: print(col)
-
     return data_dirpath, cols, sort_cols, task, get_block
 
 
@@ -161,8 +148,9 @@ def process_dataframe(df, task, sort_cols, output_dirname):
     winshifts_df = pd.DataFrame({})
     avg_winshifts_df = pd.DataFrame({})
 
-    # sort by the required identifying variables
-    df.sort_values(sort_cols, inplace=True)
+    # sort by the required identifying variables if specified
+    if sort_cols:
+        df.sort_values(sort_cols, inplace=True)
 
     # assign groups based on subject number
     df['Group'] = df.apply(utils.assign_group, task=task, axis=1)
@@ -260,6 +248,21 @@ def main():
             except:
                 messagebox.showinfo(
                     "No excel spreadsheets found. Please restart the program.")
+
+            # if columns have not been specified yet call process example to
+            # get info
+            if not cols:
+                # setup the excel file
+                excel = pd.ExcelFile(allFiles[0])
+
+                # now read excel file data into a DataFrame
+                datafile = pd.read_excel(excel)
+                # assign cols
+                cols = ask_columns(list(datafile.columns.values))
+
+            # print which columns will be pulled into the output excel
+            print("Current columns to be captured from the excel files:\n")
+            for col in cols: print(col)
 
             # parse over all data files
             for file_name in allFiles:
