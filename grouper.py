@@ -46,7 +46,7 @@ def get_directory(root, initial_dir, title_dir):
         exit()
 
 
-def process_file(file_name, cols, get_block = False):
+def process_file(file_name, cols, get_block=False):
     """ Parse an excel file and return a dataframe trimmed based on which 
     columns are required for the given task """
 
@@ -303,11 +303,16 @@ def main():
             plot_df.to_excel(excel_writer, index=False,
                                 sheet_name = 'Means')
         excel_writer.save()
+
     except ValueError:
         messagebox.showwarning('Warning', 'No Excel files found in data '
                                           'directory.')
     except IndexError:
         messagebox.showwarning('Warning', 'Data directory is empty.')
+
+    except KeyError:
+        messagebox.showwarning('Warning', 'Chosen column not found in '
+                                          'current excel file.')
 
 
 if __name__=='__main__':

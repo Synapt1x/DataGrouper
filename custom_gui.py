@@ -12,7 +12,7 @@ grouper.py function.
 ============================
 
 """
-from tkinter import Tk, Label, Listbox, Button
+from tkinter import Tk, Label, Listbox, Button, Scrollbar, Frame
 #Button, Radiobutton, IntVar
 
 def ask_columns(all_cols):
@@ -26,19 +26,35 @@ def ask_columns(all_cols):
 
     # create the root window and add label to top of window
     window = Tk()
+    window.resizable(0, 0)  # prevent resizing of the box
+
     Label(window, text=prompt,
           width=35,
           wraplength=150,
           justify='center').pack()
 
+    # create frame for the listbox and scrollbar
+    listbox_frame = Frame(window)
+
+    # create a scroll bar for the list box
+    scrollbar = Scrollbar(listbox_frame)
+    scrollbar.pack(side='right', fill='y')
+
     # create list box
-    listbox = Listbox(window,
+    listbox = Listbox(listbox_frame,
                       selectmode='multiple',
                       exportselection=0)
     # add column names to the list box
     for col_name in all_cols:
         listbox.insert(all_cols.index(col_name), col_name)
-    listbox.pack()
+    listbox.pack(side='left', fill='y')
+
+    # pack the listbox
+    listbox_frame.pack()
+
+    # attach listbox to scrollbar
+    listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar.config(command=listbox.yview)
 
     # add a submit button
     submit_button = Button(window,
