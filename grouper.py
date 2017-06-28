@@ -199,6 +199,9 @@ def process_dataframe(df, task, sort_cols, output_dirname):
         # scale learning confidence into proportion
         df['Learning Confidence'] = df['Learning Confidence']/5
 
+    elif not task:
+
+
     return df, reversals_df, winshifts_df, avg_winshifts_df
 
 
@@ -228,8 +231,7 @@ def main():
     output_dirname = get_directory(root, '../Output/', 'Please select '
                                     'the output directory.')
     output_filename = output_dirname + sep + task + '-' + \
-                      time.strftime(
-        "%d-%m-%y") + '.xlsx'
+                      time.strftime("%d-%m-%y") + '.xlsx'
     excel_writer = pd.ExcelWriter(output_filename, engine='xlsxwriter')
 
     try:
@@ -246,8 +248,9 @@ def main():
             try:
                 num_files = len(allFiles)
             except:
-                messagebox.showinfo(
-                    "No excel spreadsheets found. Please restart the program.")
+                messagebox.showwarning("Warning",
+                    "No excel spreadsheets found. Please restart the program "
+                    "and try again.")
 
             # if columns have not been specified yet call process example to
             # get info
