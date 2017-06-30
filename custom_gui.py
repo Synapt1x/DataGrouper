@@ -12,7 +12,8 @@ grouper.py function.
 ============================
 
 """
-from tkinter import Tk, Label, Listbox, Button, Scrollbar, Frame
+from tkinter import Tk, Label, Listbox, Button, Scrollbar, Frame, \
+    Radiobutton, IntVar
 #Button, Radiobutton, IntVar
 
 def ask_columns(all_cols):
@@ -32,16 +33,16 @@ def ask_columns(all_cols):
              'excel file.'
 
     # create the root window and add label to top of window
-    window = Tk()
-    window.resizable(0, 0)  # prevent resizing of the box
+    columns_window = Tk()
+    columns_window.resizable(0, 0)  # prevent resizing of the box
 
-    Label(window, text=prompt,
+    Label(columns_window, text=prompt,
           width=35,
           wraplength=150,
           justify='center').pack()
 
     # create frame for the listbox and scrollbar
-    listbox_frame = Frame(window)
+    listbox_frame = Frame(columns_window)
 
     # create a scroll bar for the list box
     scrollbar = Scrollbar(listbox_frame)
@@ -64,12 +65,12 @@ def ask_columns(all_cols):
     scrollbar.config(command=listbox.yview)
 
     # add a submit button
-    submit_button = Button(window,
+    submit_button = Button(columns_window,
                            text='Submit',
-                           command=window.quit)
+                           command=columns_window.quit)
     submit_button.pack()
 
-    window.mainloop()
+    columns_window.mainloop()
 
     # ---------------- End of listbox gui specification
 
@@ -89,6 +90,27 @@ def choose_operations():
     :return:
     
     """
+    # set the display message
+    prompt = 'Please select which operations will be performed on the input ' \
+             'data sets.'
+
+    # create the root window and add label to top of window
+    operations_window = Tk()
+    operations_window.resizable(0, 0)  # prevent resizing of the box
+
+    Label(operations_window, text=prompt,
+          width=35,
+          wraplength=150,
+          justify='center').pack()
+
+    val = IntVar()
+
+    Radiobutton(operations_window,
+                text='test me',
+                indicatoron=0,
+                width=20,
+                padx=20,
+                variable=val).pack()
 
 
 if __name__ == '__main__':

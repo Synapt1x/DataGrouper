@@ -32,9 +32,9 @@ def gkgamma(m, n):
     :param n: a list of values for variable 2
     :return: return the gamma correlation between variable 1 and variable 2
     """
-    nc = 0 # number of concordant pairs or noninversions
-    nd = 0 # number of discordant pairs or inversions
-    nt = 0 # number of ties
+    nc = 0  # number of concordant pairs or noninversions
+    nd = 0  # number of discordant pairs or inversions
+    nt = 0  # number of ties
 
     # complete calculation for pairs (i, j)
     for (i, j) in permutations(range(len(m)), 2):
@@ -65,11 +65,11 @@ def determine_error_switches(df, task):
     wins = list(df['WinLose'])
     indices = list(df.index.values)
     error_switch = [1 if ((wins[cur - 1] == 'win')
-                        and (choice_made[cur] != choice_made[cur - 1])
-                        and (not (indices[cur] == 6 and indices[cur - 1] > 6))
-                        and (indices[cur] != 0)
-                        and (isinstance(conditions[cur - 1], str)))
-                        else 0 for cur in range(1, len(wins))]
+                    and (choice_made[cur] != choice_made[cur - 1])
+                    and (not (indices[cur] == 6 and indices[cur - 1] > 6))
+                    and (indices[cur] != 0)
+                    and (isinstance(conditions[cur - 1], str)))
+                    else 0 for cur in range(1, len(wins))]
     error_switch.insert(0, 0) # cannot be a switch at the very beginning
 
     return error_switch
@@ -124,7 +124,7 @@ def determine_max_reversals(df, project):
     df['Num Reversals'] = df.groupby(['Subject', 'Session'])[
         'Reversal'].transform('max')
 
-    # extract dataframe for just reversals
+    # extract data frame for just reversals
     reversals_df = df[['Subject', 'Session', 'Group',
                        'Num Reversals']].copy()
 
@@ -247,7 +247,7 @@ def calculate_facelearning_measures(all_data_df):
     fok = []
     block_indices = []
 
-    # firstly, make a copy of the dataframe
+    # firstly, make a copy of the data frame
     df = all_data_df.copy()
 
     grouper = df.groupby(['Subject', 'Block'])
