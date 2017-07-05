@@ -38,7 +38,7 @@ def gkgamma(m, n):
 
     # complete calculation for pairs (i, j)
     for (i, j) in permutations(range(len(m)), 2):
-        # determine number of inversiona and noninversions
+        # determine number of inversions and noninversions
         diff_m = m[i] - m[j]
         diff_n = n[i] - n[j]
 
