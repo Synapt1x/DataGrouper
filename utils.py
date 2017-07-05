@@ -78,8 +78,8 @@ def assign_group(subject_row, task):
     """ Define which group this subject belongs to """
 
     controls = {401, 402, 403, 404, 405, 418}
-    shams = {758, 762, 763, 764, 768}
-    treat = {754, 756, 757, 759, 760, 761, 766, 767}
+    shams = {751, 753, 755, 758, 762, 763, 764, 768, 769}
+    treat = {752, 754, 756, 757, 759, 760, 761, 766, 767}
 
     # check for set membership to determine where subject belongs
     if subject_row['Subject'] in controls:

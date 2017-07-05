@@ -81,11 +81,14 @@ def ask_columns(all_cols):
     return cols
 
 
-def choose_operations():
+def choose_operations(available_funcs):
     """ GUI implementation of a window that displays to the user possible
     calculation functions for processing the current set of data.
     
-    :param:
+    :param: available_funcs:
+            a list of tuples of the form (name, function_handle), where name
+            and function_handle refer to all of the functions defined in 
+            the utils.py file.
     
     :return:
     

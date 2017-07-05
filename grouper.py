@@ -25,8 +25,9 @@ from os import chdir, path, sep
 import pandas as pd
 import utils
 import processing
+import inspect
 from tkinter import Tk, messagebox
-from custom_gui import ask_columns
+from custom_gui import ask_columns, choose_operations
 import glob, time
 import platform
 
@@ -59,9 +60,12 @@ def main():
                                                                   'the '
                                                                   'output '
                                                                   'directory')
-    output_filename = output_dirname + sep + task + '-'  + time.strftime(
+    output_filename = output_dirname + sep + task + '-' + time.strftime(
         "%d-%m-%y") + '.xlsx'
     excel_writer = pd.ExcelWriter(output_filename, engine='xlsxwriter')
+
+    # get list of functions available in the utils function
+    available_funcs = inspect.getmembers(utils, inspect.isfunction)
 
     try:
         if task == 'FaceLearning':
@@ -117,10 +121,13 @@ def main():
                                                   False)
                 output_df = pd.merge(output_df, recall_df)
 
+            # ask user which operations are requested for processing
+            chosen_operations = choose_operations(available_funcs)
+
             # process the overall dataframe
             [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \
                 processing.process_dataframe(output_df, task, sort_cols,
-                                     output_dirname)
+                                     output_dirname, chosen_operations)
 
         # format and save the output excel file
         all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')

@@ -137,7 +137,7 @@ def determine_task(root, dirname, prefix):
     return data_dirpath, cols, sort_cols, task, get_block
 
 
-def process_dataframe(df, task, sort_cols, output_dirname):
+def process_dataframe(df, task, sort_cols, output_dirname, chosen_operations):
     """ Process the data frame for additional calculated columns """
 
     # initialize and leave empty if not reversal task
