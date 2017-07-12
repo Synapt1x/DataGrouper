@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="grouper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="grouper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grouper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state relative-caret-position="291">
+              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding>
                 <element signature="e#672#703#0" expanded="true" />
               </folding>
@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom_gui.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="custom_gui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/custom_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="139">
+              <caret line="53" column="72" lean-forward="true" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -82,7 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ask_columns</find>
       <find>get_block</find>
       <find>file</find>
       <find>window</find>
@@ -112,6 +111,7 @@
       <find>ask_column</find>
       <find>choose</find>
       <find>chosen_operations</find>
+      <find>tk</find>
     </findStrings>
     <replaceStrings>
       <replace>task</replace>
@@ -128,8 +128,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/processing.py" />
-        <option value="$PROJECT_DIR$/custom_gui.py" />
         <option value="$PROJECT_DIR$/grouper.py" />
+        <option value="$PROJECT_DIR$/custom_gui.py" />
       </list>
     </option>
   </component>
@@ -587,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499883168035</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Start working on using separate GUI classes">
+      <created>1499887658671</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1499887658671</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -656,7 +663,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added new output column and fixed choice made&#10;&#10;Choice made was actually unnecessary, so it was removed&#10;from utils. Some input columns were changed, and it&#10;was determined that in order to correctly get the max&#10;amount of reversals made, I needed to use 'RestCount'&#10;which denotes how many trials were left in the task. &#10;When this was 0, that denotes the highest number of&#10;reversals, since everything after is just the program&#10;running through remaining trials once each." />
     <MESSAGE value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils." />
     <MESSAGE value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils. Though there &#10;are some errors where max reversals is outputting as&#10;0." />
     <MESSAGE value="Corrected sort and investigated error; no error&#10;&#10;The output of number of reversals was in fact correct.&#10;This occurs when the participant does not proceed from IL." />
@@ -681,24 +687,25 @@
     <MESSAGE value="Add new func in custom gui and before changing structure of main" />
     <MESSAGE value="Separate processing functions into processing.py; clean up code a bit" />
     <MESSAGE value="Destroy first window; need to refactor code for gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Destroy first window; need to refactor code for gui" />
+    <MESSAGE value="Start working on using separate GUI classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start working on using separate GUI classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/custom_gui.py</url>
-          <line>161</line>
+          <line>169</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/grouper.py</url>
-          <line>127</line>
+          <line>128</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/grouper.py</url>
-          <line>100</line>
+          <line>101</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
@@ -1082,21 +1089,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/custom_gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grouper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+        <state relative-caret-position="291">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
             <element signature="e#672#703#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="53" column="72" lean-forward="true" selection-start-line="53" selection-start-column="72" selection-end-line="53" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>

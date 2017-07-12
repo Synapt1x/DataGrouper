@@ -93,7 +93,8 @@ def main():
                 datafile = pd.read_excel(excel)
                 # assign cols
                 ask_columns_window = AskColumns(root,
-                                                list(datafile.columns.values))
+                                                list(datafile.columns.values),
+                                                root)
                 cols = ask_columns_window.get_values()
                 #cols = ask_columns(list(datafile.columns.values))
 
