@@ -17,6 +17,64 @@ from tkinter import Tk, Label, Listbox, Button, Scrollbar, Frame, \
 #Button, Radiobutton
 
 
+class AskColumns(Tk):
+    def __init__(self, master, all_cols):
+        self.master = master
+        self.frame = Frame(self.master)
+        self.all_cols = all_cols
+
+        self.prompt = 'Please select which columns will be necessary for ' \
+                      'the output excel file.'
+        self.label = Label(master, text=self.prompt,
+                           width=35,
+                           wraplength=150,
+                           justify='center').pack()
+        self.add_listbox()
+        self.frame.pack()
+
+    def add_listbox(self):
+        self.listbox_frame = Frame(self.master)
+
+        # create a scroll bar for the list box
+        scrollbar = Scrollbar(self.listbox_frame)
+        scrollbar.pack(side='right', fill='y')
+
+        # create list box
+        self.listbox = Listbox(self.listbox_frame,
+                               selectmode='multiple',
+                               exportselection=0)
+        # add column names to the list box
+        for col_name in self.all_cols:
+            self.listbox.insert(self.all_cols.index(col_name), col_name)
+        self.listbox.pack(side='left', fill='y')
+
+        # pack the listbox
+        self.listbox_frame.pack()
+
+        # attach listbox to scrollbar
+        self.listbox.config(yscrollcommand=scrollbar.set)
+        scrollbar.config(command=self.listbox.yview)
+
+    def get_values(self):
+        chosen_lines = self.listbox.curselection()
+        cols = [self.all_cols[line] for line in chosen_lines]
+
+        return cols
+
+
+class AskProcessing(Tk):
+    def __init__(self, master):
+        self.master = master
+        self.frame = Tk.Frame(self.master)
+        self.quitButton = Tk.Button(self.frame, text = 'Quit', width=25,
+                                    command=self.close_windows)
+        self.quitButton.pack()
+        self.frame.pack()
+
+    def close_windows(self):
+        self.master.destroy()
+
+
 def ask_columns(all_cols):
     """ GUI implementation of a window that shows the user all of the 
      columns contained in an excel file, and then asks the user which

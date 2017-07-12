@@ -27,7 +27,7 @@ import utils
 import processing
 import inspect
 from tkinter import Tk, messagebox
-from custom_gui import ask_columns, choose_operations
+from custom_gui import AskColumns, AskProcessing
 import glob, time
 import platform
 
@@ -92,7 +92,10 @@ def main():
                 # now read excel file data into a DataFrame
                 datafile = pd.read_excel(excel)
                 # assign cols
-                cols = ask_columns(list(datafile.columns.values))
+                ask_columns_window = AskColumns(root,
+                                                list(datafile.columns.values))
+                cols = ask_columns_window.get_values()
+                #cols = ask_columns(list(datafile.columns.values))
 
             # print which columns will be pulled into the output excel
             print("Current columns to be captured from the excel files:\n")
@@ -122,7 +125,8 @@ def main():
                 output_df = pd.merge(output_df, recall_df)
 
             # ask user which operations are requested for processing
-            chosen_operations = choose_operations(available_funcs)
+            #chosen_operations = choose_operations(available_funcs)
+            chosen_operations = []
 
             # process the overall dataframe
             [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \

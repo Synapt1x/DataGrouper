@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="009c9dd4-f5ad-45c8-b38c-6f310411950d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Parser.iml" afterPath="$PROJECT_DIR$/.idea/Parser.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/custom_gui.py" afterPath="$PROJECT_DIR$/custom_gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grouper.py" afterPath="$PROJECT_DIR$/grouper.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="grouper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="grouper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grouper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+            <state relative-caret-position="257">
+              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding>
                 <element signature="e#672#703#0" expanded="true" />
               </folding>
@@ -62,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom_gui.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom_gui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/custom_gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="408">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,8 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>current columns</find>
-      <find>sort_values</find>
       <find>ask_columns</find>
       <find>get_block</find>
       <find>file</find>
@@ -110,9 +107,11 @@
       <find>processing`</find>
       <find>processing</find>
       <find>process_data</find>
-      <find>choose</find>
       <find>choose_operation</find>
       <find>choose_operations</find>
+      <find>ask_column</find>
+      <find>choose</find>
+      <find>chosen_operations</find>
     </findStrings>
     <replaceStrings>
       <replace>task</replace>
@@ -128,9 +127,9 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/grouper.py" />
         <option value="$PROJECT_DIR$/processing.py" />
         <option value="$PROJECT_DIR$/custom_gui.py" />
+        <option value="$PROJECT_DIR$/grouper.py" />
       </list>
     </option>
   </component>
@@ -581,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498839858533</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Destroy first window; need to refactor code for gui">
+      <created>1499883168035</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1499883168035</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -595,6 +601,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17226666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -604,7 +611,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39809927" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39809927" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31197917" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -649,7 +656,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Almost complete grouper; need output formatting fix" />
     <MESSAGE value="Added new output column and fixed choice made&#10;&#10;Choice made was actually unnecessary, so it was removed&#10;from utils. Some input columns were changed, and it&#10;was determined that in order to correctly get the max&#10;amount of reversals made, I needed to use 'RestCount'&#10;which denotes how many trials were left in the task. &#10;When this was 0, that denotes the highest number of&#10;reversals, since everything after is just the program&#10;running through remaining trials once each." />
     <MESSAGE value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils." />
     <MESSAGE value="Complete count of reversals in task&#10;&#10;Number of reversal counts have been completed for both&#10;tasks, the function is complete in unils. Though there &#10;are some errors where max reversals is outputting as&#10;0." />
@@ -674,20 +680,26 @@
     <MESSAGE value="Update work on general processing; need to fix task selector" />
     <MESSAGE value="Add new func in custom gui and before changing structure of main" />
     <MESSAGE value="Separate processing functions into processing.py; clean up code a bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Separate processing functions into processing.py; clean up code a bit" />
+    <MESSAGE value="Destroy first window; need to refactor code for gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Destroy first window; need to refactor code for gui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/custom_gui.py</url>
-          <line>103</line>
+          <line>161</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/grouper.py</url>
-          <line>124</line>
+          <line>127</line>
           <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/grouper.py</url>
+          <line>100</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -700,7 +712,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="101" />
+      <option name="time" value="106" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1070,21 +1082,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grouper.py">
+    <entry file="file://$PROJECT_DIR$/custom_gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding>
-            <element signature="e#672#703#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/custom_gui.py">
+    <entry file="file://$PROJECT_DIR$/grouper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="257">
+          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding>
+            <element signature="e#672#703#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
