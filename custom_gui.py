@@ -14,7 +14,8 @@ grouper.py function.
 """
 from tkinter import Tk, Label, Listbox, Button, Scrollbar, Frame, \
     Radiobutton, IntVar
-#Button, Radiobutton, IntVar
+#Button, Radiobutton
+
 
 def ask_columns(all_cols):
     """ GUI implementation of a window that shows the user all of the 
@@ -64,7 +65,7 @@ def ask_columns(all_cols):
     listbox.config(yscrollcommand=scrollbar.set)
     scrollbar.config(command=listbox.yview)
 
-    # add a submit button
+    # add a submit button1
     submit_button = Button(columns_window,
                            text='Submit',
                            command=columns_window.quit)
@@ -77,6 +78,9 @@ def ask_columns(all_cols):
     # acquire the chosen columns
     chosen_lines = listbox.curselection()
     cols = [all_cols[line] for line in chosen_lines]
+
+    # destroy the window after acquiring the necessary information
+    columns_window.destroy()
 
     return cols
 
@@ -93,9 +97,12 @@ def choose_operations(available_funcs):
     :return:
     
     """
+    # initialize list of chosen functions
+    chosen_funcs = []
+
     # set the display message
     prompt = 'Please select which operations will be performed on the input ' \
-             'data sets.'
+             'datasets.'
 
     # create the root window and add label to top of window
     operations_window = Tk()
@@ -114,6 +121,8 @@ def choose_operations(available_funcs):
                 width=20,
                 padx=20,
                 variable=val).pack()
+
+    return chosen_funcs
 
 
 if __name__ == '__main__':
