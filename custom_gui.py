@@ -18,12 +18,13 @@ from tkinter import Tk, Label, Listbox, Button, Scrollbar, Frame, \
 
 
 class AskColumns:
-    def __init__(self, master, all_cols, controller):
+
+    def __init__(self, master, all_cols):
+
         self.master = master
+        self.master.deiconify()
         self.frame = Frame(self.master)
         self.all_cols = all_cols
-
-        self.controller = controller
 
         self.prompt = 'Please select which columns will be necessary for ' \
                       'the output excel file.'
@@ -32,13 +33,14 @@ class AskColumns:
                            wraplength=150,
                            justify='center').pack()
         self.add_listbox()
-        submit_button = Button(self,
+        '''submit_button = Button(self,
                                text='Submit',
                                command=self.update_vals())
-        submit_button.pack()
+        submit_button.pack()'''
         self.frame.pack()
 
     def add_listbox(self):
+
         self.listbox_frame = Frame(self.master)
 
         # create a scroll bar for the list box
@@ -62,6 +64,7 @@ class AskColumns:
         scrollbar.config(command=self.listbox.yview)
 
     def update_vals(self):
+
         chosen_lines = self.listbox.curselection()
         cols = [self.all_cols[line] for line in chosen_lines]
 
@@ -71,7 +74,9 @@ class AskColumns:
 
 
 class AskProcessing:
+
     def __init__(self, master):
+
         self.master = master
         self.frame = Tk.Frame(self.master)
         self.quitButton = Tk.Button(self.frame, text='Quit', width=25,
@@ -80,6 +85,7 @@ class AskProcessing:
         self.frame.pack()
 
     def close_windows(self):
+
         self.master.destroy()
 
 

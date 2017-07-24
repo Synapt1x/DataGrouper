@@ -67,90 +67,89 @@ def main():
     # get list of functions available in the utils function
     available_funcs = inspect.getmembers(utils, inspect.isfunction)
 
-    try:
-        if task == 'FaceLearning':
-            # first merge the learning and recall files
-            all_data_df = utils.merge_facelearning(data_dirpath)
+    #try:
+    if task == 'FaceLearning':
+        # first merge the learning and recall files
+        all_data_df = utils.merge_facelearning(data_dirpath)
 
-            [summary_df, plot_df] = utils.calculate_facelearning_measures(
-                all_data_df)
-        else:
+        [summary_df, plot_df] = utils.calculate_facelearning_measures(
+            all_data_df)
+    else:
 
-            # get a list of all data files in data directory chosen
-            all_files = glob.glob("*.xlsx")
-            if not len(all_files):
-                messagebox.showwarning("Warning", "No excel spreadsheets "
-                                                  "found. Please restart "
-                                                  "the program and try again.")
+        # get a list of all data files in data directory chosen
+        all_files = glob.glob("*.xlsx")
+        if not len(all_files):
+            messagebox.showwarning("Warning", "No excel spreadsheets "
+                                              "found. Please restart "
+                                              "the program and try again.")
 
-            # if columns have not been specified yet call process example to
-            # get info
-            if not cols:
-                # setup the excel file
-                excel = pd.ExcelFile(all_files[0])
+        # if columns have not been specified yet call process example to
+        # get info
+        if not cols:
+            # setup the excel file
+            excel = pd.ExcelFile(all_files[0])
 
-                # now read excel file data into a DataFrame
-                datafile = pd.read_excel(excel)
-                # assign cols
-                ask_columns_window = AskColumns(root,
-                                                list(datafile.columns.values),
-                                                root)
-                cols = ask_columns_window.get_values()
-                #cols = ask_columns(list(datafile.columns.values))
+            # now read excel file data into a DataFrame
+            datafile = pd.read_excel(excel)
+            # assign cols
+            ask_columns_window = AskColumns(root,
+                                            list(datafile.columns.values))
+            #cols = ask_columns_window.get_values()
+            #cols = ask_columns(list(datafile.columns.values))
 
-            # print which columns will be pulled into the output excel
-            print("Current columns to be captured from the excel files:\n")
-            for col in cols: print(col)
+        # print which columns will be pulled into the output excel
+        print("Current columns to be captured from the excel files:\n")
+        for col in cols: print(col)
 
-            # parse over all data files
-            for file_name in all_files:
-                # store the data frame after only selecting necessary columns
-                trimmed_frames.append(processing.process_file(file_name, cols,
-                                                    get_block))
+        # parse over all data files
+        for file_name in all_files:
+            # store the data frame after only selecting necessary columns
+            trimmed_frames.append(processing.process_file(file_name, cols,
+                                                get_block))
 
-            # concatenate the data frames into one and process it
-            output_df = pd.concat(trimmed_frames)
+        # concatenate the data frames into one and process it
+        output_df = pd.concat(trimmed_frames)
 
-            # recall in face learning task also needs names from the typed
-            # excel
-            if task == 'FaceLearning-Recall':
-                temp_path = prefix + 'MandanaResearch/OCD-FaceLearning' \
-                            '/RecallResponses/'
-                chdir(temp_path)
+        # recall in face learning task also needs names from the typed
+        # excel
+        if task == 'FaceLearning-Recall':
+            temp_path = prefix + 'MandanaResearch/OCD-FaceLearning' \
+                        '/RecallResponses/'
+            chdir(temp_path)
 
-                recall_cols = ['Subject', 'Block', 'Trial', 'Recall Choice',
-                               'Recog Choice']
-                file_name = glob.glob("*.xlsx")[0]
-                recall_df = processing.process_file(file_name, recall_cols,
-                                                  False)
-                output_df = pd.merge(output_df, recall_df)
+            recall_cols = ['Subject', 'Block', 'Trial', 'Recall Choice',
+                           'Recog Choice']
+            file_name = glob.glob("*.xlsx")[0]
+            recall_df = processing.process_file(file_name, recall_cols,
+                                              False)
+            output_df = pd.merge(output_df, recall_df)
 
-            # ask user which operations are requested for processing
-            #chosen_operations = choose_operations(available_funcs)
-            chosen_operations = []
+        # ask user which operations are requested for processing
+        #chosen_operations = choose_operations(available_funcs)
+        chosen_operations = []
 
-            # process the overall dataframe
-            [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \
-                processing.process_dataframe(output_df, task, sort_cols,
-                                     output_dirname, chosen_operations)
+        # process the overall dataframe
+        [all_data_df, reversals_df, winshifts_df, winshifts_avg_df] = \
+            processing.process_dataframe(output_df, task, sort_cols,
+                                 output_dirname, chosen_operations)
 
-        # format and save the output excel file
-        all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')
-        if task == 'ActionValue' or task == 'Prob_RL':
-            reversals_df.to_excel(excel_writer, index=False,
-                                  sheet_name='Reversals')
-            winshifts_df.to_excel(excel_writer, index=False, header=True,
-                                  sheet_name='Winshifts')
-            winshifts_avg_df.to_excel(excel_writer, index=True, header=True,
-                                  sheet_name='Avg Winshifts')
-        if task == 'FaceLearning':
-            summary_df.to_excel(excel_writer, index=False,
-                                sheet_name='Analysis')
-            plot_df.to_excel(excel_writer, index=False,
-                                sheet_name='Means')
-        excel_writer.save()
+    # format and save the output excel file
+    all_data_df.to_excel(excel_writer, index=False, sheet_name='All Data')
+    if task == 'ActionValue' or task == 'Prob_RL':
+        reversals_df.to_excel(excel_writer, index=False,
+                              sheet_name='Reversals')
+        winshifts_df.to_excel(excel_writer, index=False, header=True,
+                              sheet_name='Winshifts')
+        winshifts_avg_df.to_excel(excel_writer, index=True, header=True,
+                              sheet_name='Avg Winshifts')
+    if task == 'FaceLearning':
+        summary_df.to_excel(excel_writer, index=False,
+                            sheet_name='Analysis')
+        plot_df.to_excel(excel_writer, index=False,
+                            sheet_name='Means')
+    excel_writer.save()
 
-    except ValueError:
+    '''except ValueError:
         messagebox.showwarning('Warning', 'No Excel files found in data '
                                           'directory.')
     except IndexError:
@@ -158,7 +157,7 @@ def main():
 
     except KeyError:
         messagebox.showwarning('Warning', 'Chosen column not found in '
-                                          'current excel file.')
+                                          'current excel file.')'''
 
 
 if __name__ == '__main__':
